@@ -1,4 +1,25 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>发布文章测试</title><url>http://sunjunyu.cn/post/test-text/</url><categories/><tags><tag>blog</tag><tag>text</tag></tags><content type="html"> hello hugo， 第一次发布帖子，测试是否可用，是否能够正常显示。 感谢此主题的作者发布此款主题供我们使用。</content></entry><entry><title>Hello World</title><url>http://sunjunyu.cn/2020/09/11/hexo-hello-world.html</url><categories><category>Hugo</category></categories><tags><tag>测试</tag><tag>学习</tag></tags><content type="html"> 你对我的心有偏见。我向您保证，我们的生活将不会受到影响，我们的生活将会受到影响。你说你现在住在医院里，因为你的眼睛是透明的，你的眼睛是光明的，你的眼睛是光明的!
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><search><entry><title>使用hugo搭建属于自己的静态博客</title><url>http://sunjunyu.cn/post/hugo%E6%90%AD%E5%BB%BAblog/</url><categories/><tags><tag>hugo</tag></tags><content type="html"> # 使用hugo搭建属于自己的纯静态博客系统 #
+Hugo是基于go语言的静态网站生成器。
+什么是静态网站生成器？顾名思义就是以最快的速度生成一个高可用的Web页面，我们都知道Django作为一款非常流行的框架被广泛应用，但是部署起来实在是太麻烦了，各种命令各种配置，动态页面必然要涉及数据库的配置和操作，另外只要涉及数据库操作，你就不得不考虑SQL注入等一系列的安全因素，而纯静态页面则没有这个烦恼，我们只需要一个简单的站点，一些简单的功能和页面，比如博客，我们只想以极简的方式用Markdown语法写下文字或者代码，让服务器访问静态页面就简单方便很多，这就是静态网站生成器可以提供给我们的好处。
+为什么选择Hugo?
+Hugo是一种go语言编写的静态网站生成器。适用于搭建个人、公司主页等网站，是一种小型的cms系统。静态网站的好处就是快捷、安全、易部署、方便管理。
+Hugo的优点包括但不限于：
+得益于Go的高性能、性能很快； 世界上最快的静态网站生成工具，5秒生成6000个页面； 文档为Markdown格式，语法简单； hugo可以做静态文件生成工具，还是高性能web服务； 丰富的站点迁移工具可以将WordPress，Ghost，Jekyll，DokuWiki,Dlogger轻松迁移至Hugo； 超详细的文档； 丰富的主题模板，可以让你的网站更加炫目多彩；
+多环境支持：macos、Linux、Windows
+首先，可以去Go的官方网站下载安装包https://golang.org/dl/然后直接双击安装即可，无需配置环境变量，因为安装过程自动配置，安装完毕后，打开命令行。输入
+go version 显示主版本号即表示安装成功
+然后，可以进行hugo的在线源码编译安装，打开命令行，输入下面的命令
+go get -u -v github.com/spf13/hugo go build -o hugo main.go mv hugo $GOPATH/bin 在线编译失败或不想使用在线编译安装，也可以去hugo的官网https://github.com/gohugoio/hugo/releases下载稳定的压缩包，解压之后配置一下环境变量即可。
+安装以后，命令行内输入
+hugo version 打印出版本号即表示hugo
+安装成功
+在命令行输入
+hugo new site hugo_blog 即可生成一个名字为hugo——blog的新站点，我们可以感受到速度非常快，和基于vue.js的hexo创建的站点速度比起来简直就是天壤之别
+打开配置文件config.toml，这是hugo的站点的相关配置文件，可以进行一些个性化的定制，改为下面这样：
+baseURL = "/" languageCode = "en-us" title = "我的博客" #指定主题 theme = "hyde" [params] #博客简介 description = "这里是蓝桉的个人博客" #博客主题颜色 themeColor = "theme-base-08" 可以看到我们制定了一个主题hyde，添加了Theme后的站点才有血有肉，丰富多彩。
+更多的主题可以在这个上面下载，都是免费而开源的：https://themes.gohugo.io/
+进入到站点内的themes目录，输入命令下载hyde主题，hugo有很多漂亮的主题可以选择</content></entry><entry><title>发布文章测试</title><url>http://sunjunyu.cn/post/test-text/</url><categories/><tags><tag>blog</tag><tag>text</tag></tags><content type="html"> hello hugo， 第一次发布帖子，测试是否可用，是否能够正常显示。 感谢此主题的作者发布此款主题供我们使用。</content></entry><entry><title>计算机概述</title><url>http://sunjunyu.cn/post/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%A6%82%E8%BF%B0/</url><categories/><tags><tag>计算机</tag><tag>笔记</tag></tags><content type="html"> 我们处于的这个时代，也就是21世纪的一些重要特征就是数字化、网络化和信息化，它是一个以网络为核心的信息时代。要实现这些就必须依靠完善的网络，因为网络可以非常迅速的传递信息，所以网络已经成为信息社会的命脉和发展知识经济的重要基础。
+目前我们经常使用的网络有三大类，即电信网络、有线电视网络和计算机网络，最初的服务分工为： 电信网络向用户提供电话、电报以及传真等服务。</content></entry><entry><title>Hello World</title><url>http://sunjunyu.cn/2020/09/11/hexo-hello-world.html</url><categories><category>Hugo</category></categories><tags><tag>测试</tag><tag>学习</tag></tags><content type="html"> 你对我的心有偏见。我向您保证，我们的生活将不会受到影响，我们的生活将会受到影响。你说你现在住在医院里，因为你的眼睛是透明的，你的眼睛是光明的，你的眼睛是光明的!
 Exierant elisi ambit vivere dedere Duce pollice Eris modo Spargitque ferrea quos palude Rursus nulli murmur; hastile inridet ut ab gravi sententia! Nomine potitus silentia flumen, sustinet placuit petis in dilapsa erat sunt. Atria tractus malis.
 Comas hunc haec pietate fetum procerum dixit Post torum vates letum Tiresia Flumen querellas Arcanaque montibus omnes Quidem et Vagus elidunt
 The Van de Graaf Canon

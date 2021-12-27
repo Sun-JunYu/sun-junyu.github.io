@@ -4,23 +4,24 @@
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
 <meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1">
 <meta http-equiv=content-security-policy content="upgrade-insecure-requests">
-<title> themes - 热爱生活与梦想 </title>
+<title> 使用hugo搭建属于自己的静态博客 - 热爱生活与梦想 </title>
 <meta name=keywords content="博客,程序员,架构师,思考,读书,笔记,技术,分享,大数据,产品">
 <meta name=author content="凡梦星尘">
-<meta property="og:title" content="themes">
+<meta property="og:title" content="使用hugo搭建属于自己的静态博客">
 <meta property="og:site_name" content="热爱生活与梦想">
 <meta property="og:image" content="/img/author.jpg">
-<meta name=title content="themes - 热爱生活与梦想">
-<meta name=description content="欢迎来到凡梦星尘空间站，个人主要专注于程序开发，产品，售前及大数据解决方案。">
+<meta name=title content="使用hugo搭建属于自己的静态博客 - 热爱生活与梦想">
+<meta name=description content="计算机网络在信息时代中的作用">
 <link rel="shortcut icon" href=/img/favicon.ico>
 <link rel=apple-touch-icon href=/img/apple-touch-icon.png>
 <link rel=apple-touch-icon-precomposed href=/img/apple-touch-icon.png>
 <link href=//cdn.bootcdn.net/ajax/libs/font-awesome/4.6.2/css/font-awesome.min.css rel=stylesheet type=text/css>
+<link href=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.css rel=stylesheet>
 <link href=/css/main.css rel=stylesheet type=text/css>
 <link href=/css/syntax.css rel=stylesheet type=text/css>
 </head>
 <body itemscope itemtype=http://schema.org/WebPage lang=zh-hans>
-<div class="container one-collumn sidebar-position-left">
+<div class="container one-collumn sidebar-position-left page-home">
 <div class=headband></div>
 <header id=header class=header itemscope itemtype=http://schema.org/WPHeader>
 <div class=header-inner> <div class=site-brand-container>
@@ -35,8 +36,6 @@
 <div class=multi-lang-switch>
 <i class="fa fa-fw fa-language" style=margin-right:5px></i>
 <a class=lang-link id=zh-cn href=#>中文</a>
-<span class=lang-line> / </span>
-<a class=lang-link id=en href=http://sunjunyu.cn/en/categories/themes/>English</a>
 </div>
 <div class=custom-logo-site-title>
 <a href=/ class=brand rel=start>
@@ -98,33 +97,146 @@
 <div class=main-inner>
 <div class=content-wrap>
 <div id=content class=content>
-<section id=posts class=posts-collapse>
-<div class=collection-title>
-<h2>themes
-<small>分类</small>
-</h2>
-</div>
-<div class=collection-title>
-<h2 class="archive-year motion-element" id=archive-year-2019>2019</h2>
-</div>
-<article class="post post-type-normal }}" itemscope itemtype=http://schema.org/Article>
+<section id=posts class=posts-expand>
+<article class="post post-type-normal" itemscope itemtype=http://schema.org/Article>
 <header class=post-header>
-<h1 class=post-title>
-<a class=post-title-link href=http://sunjunyu.cn/post/markdown-syntax/ itemprop=url>
-<span itemprop=name>Markdown语法手册</span>
+<h1 class=post-title itemprop="name headline">
+<a class=post-title-link href=http://sunjunyu.cn/post/hugo%E6%90%AD%E5%BB%BAblog/ itemprop=url>
+使用hugo搭建属于自己的静态博客
 </a>
 </h1>
 <div class=post-meta>
-<time class=post-time itemprop=dateCreated datetime=2019-03-11 content="03-11">
-03-11
+<span class=post-time>
+<i class="fa fa-calendar-o fa-fw"></i>
+<span class=post-meta-item-text>时间：</span>
+<time itemprop=dateCreated datetime=2016-03-22T13:04:35+08:00 content="2021-12-22">
+2021-12-22
 </time>
+</span>
+<span>
+|
+<i class="fa fa-file-word-o fa-fw"></i>
+<span class=post-meta-item-text>字数：</span>
+<span class=leancloud-world-count>1204 字</span>
+</span>
+<span>
+|
+<i class="fa fa-eye fa-fw"></i>
+<span class=post-meta-item-text>阅读：</span>
+<span class=leancloud-view-count>3分钟</span>
+</span>
+<span id=/post/hugo%E6%90%AD%E5%BB%BAblog/ class=leancloud_visitors data-flag-title=使用hugo搭建属于自己的静态博客>
+|
+<i class="fa fa-binoculars fa-fw"></i>
+<span class=post-meta-item-text>阅读次数：</span>
+<span class=leancloud-visitors-count></span>
+</span>
 </div>
 </header>
+<div class=post-body itemprop=articleBody>
+<p># <h1>使用hugo搭建属于自己的纯静态博客系统</h1> #</p>
+<p>Hugo是基于go语言的静态网站生成器。</p>
+<p>什么是静态网站生成器？顾名思义就是以最快的速度生成一个高可用的Web页面，我们都知道Django作为一款非常流行的框架被广泛应用，但是部署起来实在是太麻烦了，各种命令各种配置，动态页面必然要涉及数据库的配置和操作，另外只要涉及数据库操作，你就不得不考虑SQL注入等一系列的安全因素，而纯静态页面则没有这个烦恼，我们只需要一个简单的站点，一些简单的功能和页面，比如博客，我们只想以极简的方式用Markdown语法写下文字或者代码，让服务器访问静态页面就简单方便很多，这就是静态网站生成器可以提供给我们的好处。</p>
+<p>为什么选择Hugo?</p>
+<p>Hugo是一种go语言编写的静态网站生成器。适用于搭建个人、公司主页等网站，是一种小型的cms系统。静态网站的好处就是快捷、安全、易部署、方便管理。</p>
+<p>Hugo的优点包括但不限于：</p>
+<p>得益于Go的高性能、性能很快；
+世界上最快的静态网站生成工具，5秒生成6000个页面；
+文档为Markdown格式，语法简单；
+hugo可以做静态文件生成工具，还是高性能web服务；
+丰富的站点迁移工具可以将WordPress，Ghost，Jekyll，DokuWiki,Dlogger轻松迁移至Hugo；
+超详细的文档；
+丰富的主题模板，可以让你的网站更加炫目多彩；</p>
+<p>多环境支持：macos、Linux、Windows</p>
+<p>首先，可以去Go的官方网站下载安装包<a href=https://golang.org/dl/>https://golang.org/dl/</a>然后直接双击安装即可，无需配置环境变量，因为安装过程自动配置，安装完毕后，打开命令行。输入</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>go version
+</code></pre></div><p>显示主版本号即表示安装成功</p>
+<p>然后，可以进行hugo的在线源码编译安装，打开命令行，输入下面的命令</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>go get -u -v github.com/spf13/hugo
+go build -o hugo main.go
+mv hugo $GOPATH/bin
+</code></pre></div><p>在线编译失败或不想使用在线编译安装，也可以去hugo的官网https://github.com/gohugoio/hugo/releases下载稳定的压缩包，解压之后配置一下环境变量即可。</p>
+<p>安装以后，命令行内输入</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>hugo version
+</code></pre></div><p>打印出版本号即表示hugo</p>
+<p>安装成功</p>
+<p>在命令行输入</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>hugo new site hugo_blog
+</code></pre></div><p>即可生成一个名字为hugo——blog的新站点，我们可以感受到速度非常快，和基于vue.js的hexo创建的站点速度比起来简直就是天壤之别</p>
+<p>打开配置文件config.toml，这是hugo的站点的相关配置文件，可以进行一些个性化的定制，改为下面这样：</p>
+<div class=highlight><pre tabindex=0 style=background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-fallback data-lang=fallback>baseURL = &#34;/&#34;
+languageCode = &#34;en-us&#34;
+title = &#34;我的博客&#34;
+#指定主题
+theme = &#34;hyde&#34;
+
+[params]
+#博客简介
+description = &#34;这里是蓝桉的个人博客&#34;
+#博客主题颜色
+themeColor = &#34;theme-base-08&#34;
+</code></pre></div><p>可以看到我们制定了一个主题hyde，添加了Theme后的站点才有血有肉，丰富多彩。</p>
+<p>更多的主题可以在这个上面下载，都是免费而开源的：https://themes.gohugo.io/</p>
+<p>进入到站点内的themes目录，输入命令下载hyde主题，hugo有很多漂亮的主题可以选择</p>
+</div>
+<footer class=post-footer>
+<div class=post-tags>
+<a href=/tags/hugo rel=tag title=hugo>#hugo#</a>
+</div>
+<div class=addthis_inline_share_toolbox></div>
+<div class=post-nav>
+<div class=article-copyright>
+<div class=article-copyright-img>
+<img src=/img/qq_qrcode.png width=129px height=129px>
+<div style=text-align:center>QQ扫一扫交流</div>
+</div>
+<div class=article-copyright-info>
+<p>
+<span>声明：</span>使用hugo搭建属于自己的静态博客
+</p>
+<p>
+<span>链接：</span>http://sunjunyu.cn/post/hugo%E6%90%AD%E5%BB%BAblog/
+</p>
+<p>
+<span>作者：</span>凡梦星尘
+</p>
+<p>
+<span>声明： </span>本博客文章除特别声明外，均采用 <a href=https://creativecommons.org/licenses/by-nc-sa/3.0/ target=_blank style=text-decoration:underline>CC BY-NC-SA 3.0</a>许可协议，转载请注明出处！
+</p>
+</div>
+</div>
+<div class=clear></div>
+</div>
+<div class=reward-qr-info>
+<div>创作实属不易，如有帮助，那就打赏博主些许茶钱吧 ^_^</div>
+<button id=rewardButton disable=enable onclick="var qr=document.getElementById('QR');qr.style.display==='none'?qr.style.display='block':qr.style.display='none'">
+<span>赏</span>
+</button>
+<div id=QR style=display:none>
+<div id=wechat style=display:inline-block>
+<img id=wechat_qr src=/img/wechat-pay.png alt="WeChat Pay">
+<p>微信打赏</p>
+</div>
+<div id=alipay style=display:inline-block>
+<img id=alipay_qr src=/img/ali-pay.png alt=Alipay>
+<p>支付宝打赏</p>
+</div>
+</div>
+</div>
+<div class=post-nav>
+<div class="post-nav-next post-nav-item">
+</div>
+<div class="post-nav-prev post-nav-item">
+<a href=http://sunjunyu.cn/post/test-text/ rel=prev title=发布文章测试>
+发布文章测试
+<i class="fa fa-chevron-right"></i>
+</a>
+</div>
+</div>
+<div id=wcomments></div>
+</footer>
 </article>
 </section>
-<nav class=pagination>
-<span class="page-number current">1</span>
-</nav>
 </div>
 </div>
 <div class=sidebar-toggle>
@@ -164,12 +276,6 @@
 </a>
 </div>
 </nav>
-<div class="feed-link motion-element">
-<a href=/categories/themes/index.xml rel=alternate type=application/rss+xml target=_blank>
-<i class="fa fa-rss"></i>
-RSS 订阅
-</a>
-</div>
 <div class="links-of-author motion-element">
 <span class=links-of-author-item>
 <a href=https://github.com/elkan1788/ target=_blank title=GitHub>
@@ -300,6 +406,10 @@ Storage by
 <script type=text/javascript src=/js/affix.js></script>
 <script type=text/javascript src=/js/scrollspy.js></script>
 <script type=text/javascript>function detectIE(){var a=window.navigator.userAgent,b=a.indexOf('MSIE '),c=a.indexOf('Trident/'),d=a.indexOf('Edge/');return b>0||c>0||d>0?-1:1}function getCntViewHeight(){var b=$('#content').height(),a=$(window).height(),c=b>a?b-a:$(document).height()-a;return c}function getScrollbarWidth(){var a=$('<div />').addClass('scrollbar-measure').prependTo('body'),b=a[0],c=b.offsetWidth-b.clientWidth;return a.remove(),c}function registerBackTop(){var b=50,a=$('.back-to-top');$(window).on('scroll',function(){var d,e,f,c,g;a.toggleClass('back-to-top-on',window.pageYOffset>b),d=$(window).scrollTop(),e=getCntViewHeight(),f=d/e,c=Math.round(f*100),g=c>100?100:c,$('#scrollpercent>span').html(g)}),a.on('click',function(){$("html,body").animate({scrollTop:0,screenLeft:0},800)})}function initScrollSpy(){var a='.post-toc',d=$(a),b='.active-current';d.on('activate.bs.scrollspy',function(){var b=$(a+' .active').last();c(),b.addClass('active-current')}).on('clear.bs.scrollspy',c),$('body').scrollspy({target:a});function c(){$(a+' '+b).removeClass(b.substring(1))}}function initAffix(){var a=$('.header-inner').height(),b=parseInt($('.main').css('padding-bottom'),10),c=a+10;$('.sidebar-inner').affix({offset:{top:c,bottom:b}}),$(document).on('affixed.bs.affix',function(){updateTOCHeight(document.body.clientHeight-100)})}function initTOCDimension(){var a,b;$(window).on('resize',function(){a&&clearTimeout(a),a=setTimeout(function(){var a=document.body.clientHeight-100;updateTOCHeight(a)},0)}),updateTOCHeight(document.body.clientHeight-100),b=getScrollbarWidth(),$('.post-toc').css('width','calc(100% + '+b+'px)')}function updateTOCHeight(a){a=a||'auto',$('.post-toc').css('max-height',a)}$(function(){var b=$('.header-inner').height()+10,c,d,a,e;$('#sidebar').css({'margin-top':b}).show(),c=parseInt($('#sidebar').css('margin-top')),d=parseInt($('.sidebar-inner').css('height')),a=c+d,e=$('.content-wrap').height(),e<a&&$('.content-wrap').css('min-height',a),$('.site-nav-toggle').on('click',function(){var a=$('.site-nav'),e=$('.toggle'),b='site-nav-on',f='toggle-close',c=a.hasClass(b),g=c?'slideUp':'slideDown',d=c?'removeClass':'addClass';a.stop()[g]('normal',function(){a[d](b),e[d](f)})}),registerBackTop(),initScrollSpy(),initAffix(),initTOCDimension(),$('.sidebar-nav-toc').click(function(){$(this).addClass('sidebar-nav-active'),$(this).next().removeClass('sidebar-nav-active'),$('.'+$(this).next().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)}),$('.sidebar-nav-overview').click(function(){$(this).addClass('sidebar-nav-active'),$(this).prev().removeClass('sidebar-nav-active'),$('.'+$(this).prev().attr('data-target')).toggle(500),$('.'+$(this).attr('data-target')).toggle(500)})})</script>
+<script src=//cdn.bootcdn.net/ajax/libs/imageviewer/0.1.0/viewer.min.js></script>
+<script type=text/javascript>$(function(){$('.post-body').viewer()})</script>
+<script type=text/javascript>$(function(){detectIE()>0?$.getScript(document.location.protocol+'//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js',function(){new Waline({el:'#wcomments',visitor:!0,avatar:'wavatar',avatarCDN:'https://sdn.geekzu.org/avatar/',avatarForce:!1,wordLimit:'200',placeholder:' 欢迎留下您的宝贵建议，请填写您的昵称和邮箱便于后续交流. ^_^ ',requiredFields:['nick','mail'],serverURL:"Your WalineSerURL",lang:"zh-cn"})}):$('#wcomments').html('抱歉，Waline插件不支持IE或Edge，建议使用Chrome浏览器。')})</script>
+<script type=text/javascript src="//s7.addthis.com/js/300/addthis_widget.js#pubid=Your%20AddthisId"></script>
 <script>(function(){var a=document.createElement('script'),c=window.location.protocol.split(':')[0],b;c==='https'?a.src='https://zz.bdstatic.com/linksubmit/push.js':a.src='http://push.zhanzhang.baidu.com/push.js',b=document.getElementsByTagName("script")[0],b.parentNode.insertBefore(a,b)})()</script>
 </body>
 </html>
