@@ -20,15 +20,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2022/09/17/hello-world/</loc>
-    
-    <lastmod>2022-09-17</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/categories/index.html</loc>
     
     <lastmod>2022-09-17</lastmod>
@@ -101,27 +92,20 @@
 
   
   <url>
-    <loc>http://example.com/tags/hello/</loc>
-    <lastmod>2022-09-17</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/tags/%E8%BD%AF%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/</loc>
     <lastmod>2022-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
-
-  
   <url>
-    <loc>http://example.com/categories/hello/</loc>
+    <loc>http://example.com/tags/%E6%B5%8B%E8%AF%95%E9%9D%A2%E8%AF%95%E9%A2%98%E5%BA%93/</loc>
     <lastmod>2022-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
+  
+
   
   <url>
     <loc>http://example.com/categories/%E6%B5%8B%E8%AF%95/</loc>
