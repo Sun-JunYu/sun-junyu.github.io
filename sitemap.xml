@@ -4,7 +4,7 @@
   <url>
     <loc>http://example.com/2022/09/17/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/</loc>
     
-    <lastmod>2022-09-17</lastmod>
+    <lastmod>2022-09-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -13,7 +13,16 @@
   <url>
     <loc>http://example.com/2022/09/17/%E8%BD%AF%E4%BB%B6%E5%9F%BA%E7%A1%80/</loc>
     
-    <lastmod>2022-09-17</lastmod>
+    <lastmod>2022-09-20</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2022/09/20/sql%E6%93%8D%E4%BD%9C/</loc>
+    
+    <lastmod>2022-09-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -85,7 +94,7 @@
 
   <url>
     <loc>http://example.com/</loc>
-    <lastmod>2022-09-17</lastmod>
+    <lastmod>2022-09-20</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -93,14 +102,21 @@
   
   <url>
     <loc>http://example.com/tags/%E8%BD%AF%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/</loc>
-    <lastmod>2022-09-17</lastmod>
+    <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>http://example.com/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E3%80%81%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/</loc>
-    <lastmod>2022-09-17</lastmod>
+    <lastmod>2022-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/tags/SQL/</loc>
+    <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -109,7 +125,14 @@
   
   <url>
     <loc>http://example.com/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2022-09-17</lastmod>
+    <lastmod>2022-09-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/SQL/</loc>
+    <lastmod>2022-09-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
