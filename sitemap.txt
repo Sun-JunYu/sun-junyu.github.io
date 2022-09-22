@@ -12,11 +12,11 @@ http://sunjunyu.cn/about/index.html
 http://sunjunyu.cn/books/index.html
 http://sunjunyu.cn/
 http://sunjunyu.cn/tags/Linux/
-http://sunjunyu.cn/tags/%E8%BD%AF%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/
 http://sunjunyu.cn/tags/SQL/
 http://sunjunyu.cn/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/
+http://sunjunyu.cn/tags/%E8%BD%AF%E4%BB%B6%E5%9F%BA%E7%A1%80%E7%90%86%E8%AE%BA/
 http://sunjunyu.cn/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E3%80%81%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B/
-http://sunjunyu.cn/categories/%E6%B5%8B%E8%AF%95/
-http://sunjunyu.cn/categories/SQL/
 http://sunjunyu.cn/categories/Linux/
+http://sunjunyu.cn/categories/SQL/
 http://sunjunyu.cn/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/
+http://sunjunyu.cn/categories/%E6%B5%8B%E8%AF%95/
