@@ -6,7 +6,7 @@
   <link href="http://sunjunyu.cn/atom.xml" rel="self"/>
   
   <link href="http://sunjunyu.cn/"/>
-  <updated>2022-10-10T09:13:18.022Z</updated>
+  <updated>2022-10-10T11:03:56.798Z</updated>
   <id>http://sunjunyu.cn/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git命令</title>
+    <link href="http://sunjunyu.cn/2020/08/09/git/"/>
+    <id>http://sunjunyu.cn/2020/08/09/git/</id>
+    <published>2020-08-08T16:00:00.000Z</published>
+    <updated>2022-10-10T11:03:56.798Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">版本控制工具：svn、git</span><br><span class="line">图形化工具：sourcrtree、小乌龟、github</span><br><span class="line"></span><br><span class="line">免费的代码托管网站：github、gitee</span><br></pre></td></tr></table></figure><h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>初始化的仓库都有一个主分支master</p><p>  1.创建分支的时候，一般都是以一个分支为模板去创建，创建之后新分支和模板分支里面的内容一摸一样</p><p>  2.一旦创建之后，修改新分支的内容，模板分支里面不在受影响</p><p>  3.分支是可以合并的，合并后的分支有两个分支所有的内容</p><h2 id="分支相关命令"><a href="#分支相关命令" class="headerlink" title="分支相关命令"></a>分支相关命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git branch : 查看分支</span><br><span class="line">git branch 分支名: 创建分支</span><br><span class="line">git chekcout 分支名: 切换分支</span><br><span class="line">git checkout -b 分支名: 创建并切换分支</span><br><span class="line"></span><br><span class="line">合并分支:  （合并分支时，有时候会有冲突）</span><br><span class="line">git merge 分支名</span><br></pre></td></tr></table></figure><h2 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git"></a>什么是git</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">svn和git都是项目版本控制工具，可以控制项目中各个文件的变化</span><br><span class="line"></span><br><span class="line">svn是集中式的项目版本控制，git是分布式的</span><br></pre></td></tr></table></figure><h2 id="操作相关命令"><a href="#操作相关命令" class="headerlink" title="操作相关命令"></a>操作相关命令</h2><h4 id="用户配置"><a href="#用户配置" class="headerlink" title="用户配置"></a>用户配置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name   用户名</span><br><span class="line">git config --global user.email  邮箱</span><br></pre></td></tr></table></figure><h4 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure><h4 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 仓库地址</span><br></pre></td></tr></table></figure><h4 id="添加所有文件"><a href="#添加所有文件" class="headerlink" title="添加所有文件"></a>添加所有文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add --all</span><br></pre></td></tr></table></figure><h4 id="从暂存区提交"><a href="#从暂存区提交" class="headerlink" title="从暂存区提交"></a>从暂存区提交</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;注释内容&quot;</span><br></pre></td></tr></table></figure><h4 id="拉取远端内容"><a href="#拉取远端内容" class="headerlink" title="拉取远端内容"></a>拉取远端内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure><h4 id="将本地历史推送到远程"><a href="#将本地历史推送到远程" class="headerlink" title="将本地历史推送到远程"></a>将本地历史推送到远程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure><h4 id="创建一个分支"><a href="#创建一个分支" class="headerlink" title="创建一个分支"></a>创建一个分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名称</span><br></pre></td></tr></table></figure><h4 id="删除一个分支"><a href="#删除一个分支" class="headerlink" title="删除一个分支"></a>删除一个分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名称</span><br></pre></td></tr></table></figure><h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gi checkout 分支名</span><br></pre></td></tr></table></figure><h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名</span><br></pre></td></tr></table></figure><h4 id="将当前分支回退到历史某个版本"><a href="#将当前分支回退到历史某个版本" class="headerlink" title="将当前分支回退到历史某个版本"></a>将当前分支回退到历史某个版本</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset</span><br></pre></td></tr></table></figure><h4 id="查看提交历史记录"><a href="#查看提交历史记录" class="headerlink" title="查看提交历史记录"></a>查看提交历史记录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure><h4 id="对状态的跟踪"><a href="#对状态的跟踪" class="headerlink" title="对状态的跟踪"></a>对状态的跟踪</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure><h4 id="gitignore忽略文件"><a href="#gitignore忽略文件" class="headerlink" title=".gitignore忽略文件"></a>.gitignore忽略文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不想被跟踪的文件可以添加到此文件中。</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;版本控制工具&quot;&gt;&lt;a href=&quot;#版本控制工具&quot; class=&quot;headerlink&quot; title=&quot;版本控制工具&quot;&gt;&lt;/a&gt;版本控制工具&lt;/h2&gt;&lt;figure class=&quot;highlight plaintext&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=</summary>
+      
+    
+    
+    
+    <category term="git命令" scheme="http://sunjunyu.cn/categories/git%E5%91%BD%E4%BB%A4/"/>
+    
+    
+    <category term="git命令" scheme="http://sunjunyu.cn/tags/git%E5%91%BD%E4%BB%A4/"/>
+    
+    <category term="版本控制工具" scheme="http://sunjunyu.cn/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
   
   <entry>
     <title>软件开发基础</title>

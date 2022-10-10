@@ -17,38 +17,22 @@
   <meta http-equiv="window-target" content="_top" />
   
   
-  <title>软件测试 | 蓝桉个人博客</title>
-  <meta name="description" content="软件测试模型V模型 W模型 软件测试的分类 测试计划的内容1测试目的、测试资源、测试范围、测试风险、人员分工、测试策略、测试准则、测试进度、测试输出    测试目的12345671.测试编写的结构	- 目的的总体概述	- 包含详细描述2.测试目的编写的内容	- 程序是否满足需求	- 程序是否存在BUG	- 系统或产品顺利发布    测试资源12345671.人力资源	- 职务	xxx	- 姓名	测">
+  <title>git命令 | 蓝桉个人博客</title>
+  <meta name="description" content="版本控制工具1234版本控制工具：svn、git图形化工具：sourcrtree、小乌龟、github免费的代码托管网站：github、gitee  分支初始化的仓库都有一个主分支master   1.创建分支的时候，一般都是以一个分支为模板去创建，创建之后新分支和模板分支里面的内容一摸一样   2.一旦创建之后，修改新分支的内容，模板分支里面不在受影响   3.分支是可以合并的，合并后的分支有两">
 <meta property="og:type" content="article">
-<meta property="og:title" content="软件测试">
-<meta property="og:url" content="http://sunjunyu.cn/2020/05/26/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:title" content="git命令">
+<meta property="og:url" content="http://sunjunyu.cn/2020/08/09/git/index.html">
 <meta property="og:site_name" content="LanAn Blog">
-<meta property="og:description" content="软件测试模型V模型 W模型 软件测试的分类 测试计划的内容1测试目的、测试资源、测试范围、测试风险、人员分工、测试策略、测试准则、测试进度、测试输出    测试目的12345671.测试编写的结构	- 目的的总体概述	- 包含详细描述2.测试目的编写的内容	- 程序是否满足需求	- 程序是否存在BUG	- 系统或产品顺利发布    测试资源12345671.人力资源	- 职务	xxx	- 姓名	测">
+<meta property="og:description" content="版本控制工具1234版本控制工具：svn、git图形化工具：sourcrtree、小乌龟、github免费的代码托管网站：github、gitee  分支初始化的仓库都有一个主分支master   1.创建分支的时候，一般都是以一个分支为模板去创建，创建之后新分支和模板分支里面的内容一摸一样   2.一旦创建之后，修改新分支的内容，模板分支里面不在受影响   3.分支是可以合并的，合并后的分支有两">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/sunjunyu/2224323/o_220930023458_V%E6%A8%A1%E5%9E%8B.jpg">
-<meta property="og:image" content="https://images.cnblogs.com/cnblogs_com/sunjunyu/2224323/o_220930023513_M%E6%A8%A1%E5%9E%8B.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95%E7%9A%84%E5%88%86%E7%B1%BB.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\%E4%BA%BA%E5%91%98%E5%88%86%E5%B7%A5.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\%E6%B5%8B%E8%AF%95%E5%87%86%E5%88%99-%E9%9C%80%E8%A6%81%E6%BB%A1%E8%B6%B3.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\%E6%B5%8B%E8%AF%95%E5%87%86%E5%88%99-%E5%90%AF%E5%8A%A8%E6%9A%82%E5%81%9C.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\%E6%B5%8B%E8%AF%95%E5%B7%A5%E4%BD%9C%E8%BF%9B%E5%BA%A6%E8%A1%A8.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\%E7%AD%89%E4%BB%B7%E7%B1%BB%E6%A1%88%E4%BE%8B.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\%E7%AD%89%E4%BB%B7%E7%B1%BB%E6%A1%88%E4%BE%8B%E7%BB%93%E6%9E%9C.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\%E5%9C%BA%E6%99%AF%E6%B3%95%E5%8E%9F%E7%90%86%E5%9B%BE.jpg">
-<meta property="og:image" content="c:\Users\Administrator\Desktop\%E6%B5%8B%E8%AF%95%E7%AC%94%E8%AE%B0\img\ATM%E6%9C%BA%E5%9C%BA%E6%99%AF%E6%B3%95.jpg">
-<meta property="og:image" content="f:\blog\hexo_blog\source\images\%E6%8F%90%E4%BA%A4bug%E7%9A%84%E5%86%85%E5%AE%B9.jpg">
-<meta property="og:image" content="f:\blog\hexo_blog\source\images\Bug%E7%9A%84%E6%B5%81%E8%BD%AC%E7%8A%B6%E6%80%81.jpg">
-<meta property="article:published_time" content="2020-05-25T16:00:00.000Z">
-<meta property="article:modified_time" content="2022-10-10T09:12:51.292Z">
+<meta property="article:published_time" content="2020-08-08T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-10T11:03:56.798Z">
 <meta property="article:author" content="蓝桉">
-<meta property="article:tag" content="软件测试">
-<meta property="article:tag" content="测试模型">
-<meta property="article:tag" content="测试分类">
-<meta property="article:tag" content="测试用例方法">
+<meta property="article:tag" content="git命令">
+<meta property="article:tag" content="版本控制工具">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://images.cnblogs.com/cnblogs_com/sunjunyu/2224323/o_220930023458_V%E6%A8%A1%E5%9E%8B.jpg">
   <!-- Canonical links -->
-  <link rel="canonical" href="http://sunjunyu.cn/2020/05/26/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/index.html">
+  <link rel="canonical" href="http://sunjunyu.cn/2020/08/09/git/index.html">
   
     <link rel="alternate" href="/atom.xml" title="LanAn Blog" type="application/atom+xml">
   
@@ -341,14 +325,14 @@
   
 <main class="main" role="main">
   <div class="content">
-  <article id="post-软件测试" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article id="post-git" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
     
     <div class="article-header">
       
         
   
     <h1 class="article-title" itemprop="name">
-      软件测试
+      git命令
     </h1>
   
 
@@ -356,115 +340,71 @@
       <div class="article-meta">
         <span class="article-date">
     <i class="icon icon-calendar-check"></i>
-	<a href="/2020/05/26/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" class="article-date">
-	  <time datetime="2020-05-25T16:00:00.000Z" itemprop="datePublished">2020-05-26</time>
+	<a href="/2020/08/09/git/" class="article-date">
+	  <time datetime="2020-08-08T16:00:00.000Z" itemprop="datePublished">2020-08-09</time>
 	</a>
 </span>
         
   <span class="article-category">
     <i class="icon icon-folder"></i>
-    <a class="article-category-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a>
+    <a class="article-category-link" href="/categories/git%E5%91%BD%E4%BB%A4/">git命令</a>
   </span>
 
         
   <span class="article-tag">
     <i class="icon icon-tags"></i>
-	<a class="article-tag-link-link" href="/tags/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" rel="tag">测试分类</a>, <a class="article-tag-link-link" href="/tags/%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B/" rel="tag">测试模型</a>, <a class="article-tag-link-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%96%B9%E6%B3%95/" rel="tag">测试用例方法</a>, <a class="article-tag-link-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" rel="tag">软件测试</a>
+	<a class="article-tag-link-link" href="/tags/git%E5%91%BD%E4%BB%A4/" rel="tag">git命令</a>, <a class="article-tag-link-link" href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/" rel="tag">版本控制工具</a>
   </span>
 
 
         
 
-        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/05/26/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/#comments" class="article-comment-link">评论</a></span>
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2020/08/09/git/#comments" class="article-comment-link">评论</a></span>
         
       </div>
     </div>
     <div class="article-entry marked-body" itemprop="articleBody">
       
-        <h2 id="软件测试模型"><a href="#软件测试模型" class="headerlink" title="软件测试模型"></a>软件测试模型</h2><h3 id="V模型"><a href="#V模型" class="headerlink" title="V模型"></a>V模型</h3><p><img src="https://images.cnblogs.com/cnblogs_com/sunjunyu/2224323/o_220930023458_V%E6%A8%A1%E5%9E%8B.jpg"></p>
-<h3 id="W模型"><a href="#W模型" class="headerlink" title="W模型"></a>W模型</h3><p><img src="https://images.cnblogs.com/cnblogs_com/sunjunyu/2224323/o_220930023513_M%E6%A8%A1%E5%9E%8B.jpg"></p>
-<h2 id="软件测试的分类"><a href="#软件测试的分类" class="headerlink" title="软件测试的分类"></a>软件测试的分类</h2><p><img src="C:\Users\Administrator\Desktop\测试笔记\img\软件测试的分类.jpg"></p>
-<h2 id="测试计划的内容"><a href="#测试计划的内容" class="headerlink" title="测试计划的内容"></a>测试计划的内容</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">测试目的、测试资源、测试范围、测试风险、人员分工、测试策略、测试准则、测试进度、测试输出</span><br></pre></td></tr></table></figure>
+        <h2 id="版本控制工具"><a href="#版本控制工具" class="headerlink" title="版本控制工具"></a>版本控制工具</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">版本控制工具：svn、git</span><br><span class="line">图形化工具：sourcrtree、小乌龟、github</span><br><span class="line"></span><br><span class="line">免费的代码托管网站：github、gitee</span><br></pre></td></tr></table></figure>
 
+<h2 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h2><p>初始化的仓库都有一个主分支master</p>
+<p>  1.创建分支的时候，一般都是以一个分支为模板去创建，创建之后新分支和模板分支里面的内容一摸一样</p>
+<p>  2.一旦创建之后，修改新分支的内容，模板分支里面不在受影响</p>
+<p>  3.分支是可以合并的，合并后的分支有两个分支所有的内容</p>
+<h2 id="分支相关命令"><a href="#分支相关命令" class="headerlink" title="分支相关命令"></a>分支相关命令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git branch : 查看分支</span><br><span class="line">git branch 分支名: 创建分支</span><br><span class="line">git chekcout 分支名: 切换分支</span><br><span class="line">git checkout -b 分支名: 创建并切换分支</span><br><span class="line"></span><br><span class="line">合并分支:  （合并分支时，有时候会有冲突）</span><br><span class="line">git merge 分支名</span><br></pre></td></tr></table></figure>
 
+<h2 id="什么是git"><a href="#什么是git" class="headerlink" title="什么是git"></a>什么是git</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">svn和git都是项目版本控制工具，可以控制项目中各个文件的变化</span><br><span class="line"></span><br><span class="line">svn是集中式的项目版本控制，git是分布式的</span><br></pre></td></tr></table></figure>
 
-<h3 id="测试目的"><a href="#测试目的" class="headerlink" title="测试目的"></a>测试目的</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.测试编写的结构</span><br><span class="line">	- 目的的总体概述</span><br><span class="line">	- 包含详细描述</span><br><span class="line">2.测试目的编写的内容</span><br><span class="line">	- 程序是否满足需求</span><br><span class="line">	- 程序是否存在BUG</span><br><span class="line">	- 系统或产品顺利发布</span><br></pre></td></tr></table></figure>
+<h2 id="操作相关命令"><a href="#操作相关命令" class="headerlink" title="操作相关命令"></a>操作相关命令</h2><h4 id="用户配置"><a href="#用户配置" class="headerlink" title="用户配置"></a>用户配置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.name   用户名</span><br><span class="line">git config --global user.email  邮箱</span><br></pre></td></tr></table></figure>
 
+<h4 id="初始化仓库"><a href="#初始化仓库" class="headerlink" title="初始化仓库"></a>初始化仓库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
 
+<h4 id="克隆仓库"><a href="#克隆仓库" class="headerlink" title="克隆仓库"></a>克隆仓库</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone 仓库地址</span><br></pre></td></tr></table></figure>
 
-<h3 id="测试资源"><a href="#测试资源" class="headerlink" title="测试资源"></a>测试资源</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.人力资源</span><br><span class="line">	- 职务	xxx</span><br><span class="line">	- 姓名	测试工程师</span><br><span class="line">	- 职责	负责某某软件某某模块的测试</span><br><span class="line">2.系统资源</span><br><span class="line">	- 硬件：cpu、主板、内存...</span><br><span class="line">	- 软件环境（系统）：windows、CentOS 7、iOS等</span><br></pre></td></tr></table></figure>
+<h4 id="添加所有文件"><a href="#添加所有文件" class="headerlink" title="添加所有文件"></a>添加所有文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add --all</span><br></pre></td></tr></table></figure>
 
+<h4 id="从暂存区提交"><a href="#从暂存区提交" class="headerlink" title="从暂存区提交"></a>从暂存区提交</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;注释内容&quot;</span><br></pre></td></tr></table></figure>
 
+<h4 id="拉取远端内容"><a href="#拉取远端内容" class="headerlink" title="拉取远端内容"></a>拉取远端内容</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git pull</span><br></pre></td></tr></table></figure>
 
-<h3 id="测试范围"><a href="#测试范围" class="headerlink" title="测试范围"></a>测试范围</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">测试对象、测试的特性、不测试的特性</span><br></pre></td></tr></table></figure>
+<h4 id="将本地历史推送到远程"><a href="#将本地历史推送到远程" class="headerlink" title="将本地历史推送到远程"></a>将本地历史推送到远程</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
+<h4 id="创建一个分支"><a href="#创建一个分支" class="headerlink" title="创建一个分支"></a>创建一个分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch 分支名称</span><br></pre></td></tr></table></figure>
 
+<h4 id="删除一个分支"><a href="#删除一个分支" class="headerlink" title="删除一个分支"></a>删除一个分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch -d 分支名称</span><br></pre></td></tr></table></figure>
 
-<h3 id="测试风险"><a href="#测试风险" class="headerlink" title="测试风险"></a>测试风险</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">人员不足、技术有限、软件依赖环境不完备、工具不足、需求变更。</span><br></pre></td></tr></table></figure>
+<h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">gi checkout 分支名</span><br></pre></td></tr></table></figure>
 
-<p>案例：<br>本次测试活动从<strong>人</strong>、<strong>料</strong>、<strong>法</strong>、<strong>环</strong>、<strong>时</strong>进行风险分析。<br><strong>人，即测试人员：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.	业务不熟：测试人员对被测系统的业务流程不熟悉，体现在对需求的理解上把握不准、理解不透彻、理解错误等。</span><br><span class="line">2.	测试人员变动：离职、岗位调动、请假等。</span><br><span class="line">3.	定位效应：测试过的可靠功能，特别是多次回归且没有发现问题，在此后往往会认为此功能是可靠的。</span><br></pre></td></tr></table></figure>
+<h4 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge 分支名</span><br></pre></td></tr></table></figure>
 
-<p><strong>料，即测试相关文档和资料：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.	Spec(详细规格说明书)缺失：只有PRD(项目需求概要说明书)，没有Spec。</span><br><span class="line">2.	需求变更</span><br><span class="line">3.	测试用例/数据设计不充分：由于测试人员的个人因素或时间的限制等方面导致。</span><br></pre></td></tr></table></figure>
+<h4 id="将当前分支回退到历史某个版本"><a href="#将当前分支回退到历史某个版本" class="headerlink" title="将当前分支回退到历史某个版本"></a>将当前分支回退到历史某个版本</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset</span><br></pre></td></tr></table></figure>
 
-<p><strong>法，即测试方法和实施：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1.	错误或缺失测试方法：对功能点没有采用正确的测试方法，或某些测试方法没有，被忽视，如边界测试等，导致测试不充分。</span><br><span class="line">2.	场景的缺失或部分缺失：Spec非常详细，所有的精力放在功能点的测试上，忽视了针对业务场景的测试。</span><br><span class="line">3.	测试用例实施不充分：测试用例由于各种原因没有完全测试，如在回归测试中。</span><br></pre></td></tr></table></figure>
+<h4 id="查看提交历史记录"><a href="#查看提交历史记录" class="headerlink" title="查看提交历史记录"></a>查看提交历史记录</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
 
-<p><strong>环，即测试环境：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.	被测软件版本不统一：没有有效的配置管理，这种情况及易出现。</span><br><span class="line">2.	测试软件环境不一致：测试员之间或和开发之间的操作系统类型不一致、操作系统的干净程度不一致。</span><br><span class="line">3.	测试硬件环境不一致：测试员之间或和开发的设备不一致，如CPU频率，内存大小等。</span><br><span class="line">4.	测试硬件未及时到位。</span><br></pre></td></tr></table></figure>
+<h4 id="对状态的跟踪"><a href="#对状态的跟踪" class="headerlink" title="对状态的跟踪"></a>对状态的跟踪</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
 
-<p><strong>时，即测试时间：</strong></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">测试时间不足：里程碑之间留给测试的时间无法满足全测试要求。</span><br></pre></td></tr></table></figure>
+<h4 id="gitignore忽略文件"><a href="#gitignore忽略文件" class="headerlink" title=".gitignore忽略文件"></a>.gitignore忽略文件</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">不想被跟踪的文件可以添加到此文件中。</span><br></pre></td></tr></table></figure>
 
-
-
-<h3 id="人员分工"><a href="#人员分工" class="headerlink" title="人员分工"></a>人员分工</h3><p><img src="C:\Users\Administrator\Desktop\测试笔记\img\人员分工.jpg"></p>
-<h3 id="测试策略"><a href="#测试策略" class="headerlink" title="测试策略"></a>测试策略</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">都需要那些测试，如黑盒测试，用那些方式、白盒测试用那些方式等等。</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="测试准则"><a href="#测试准则" class="headerlink" title="测试准则"></a>测试准则</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">- 启动准则：满足什么情况可以进行测试</span><br><span class="line">- 暂停准则：遇到什么情况测试要暂停</span><br><span class="line">- 再启动准则：在什么情况下可以重新启动测试</span><br><span class="line">- 结束准则：什么情况可以停止测试</span><br></pre></td></tr></table></figure>
-
-<p><img src="C:\Users\Administrator\Desktop\测试笔记\img\测试准则-需要满足.jpg"></p>
-<p><img src="C:\Users\Administrator\Desktop\测试笔记\img\测试准则-启动暂停.jpg"></p>
-<h3 id="测试进度"><a href="#测试进度" class="headerlink" title="测试进度"></a>测试进度</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">测试进度需要包含一下数据：</span><br><span class="line">测试任务、负责人、预期开始时间、预期结束时间、时间进度、备注等。</span><br></pre></td></tr></table></figure>
-
-<p>例：<img src="C:\Users\Administrator\Desktop\测试笔记\img\测试工作进度表.jpg"></p>
-<h3 id="测试输出"><a href="#测试输出" class="headerlink" title="测试输出"></a>测试输出</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">这部分需要规划测试任务中所有文档的输出！</span><br><span class="line">根据项目特点进行规划：测试计划、测试设计说明书、测试案例说明书、测试规程、测试日志、测试问题报告、测试分析报告。</span><br><span class="line">如果需要某些文档合并为一篇文档，例如把测试计划说明和测试案例说明书结合在一篇文档中，需要进行说明</span><br><span class="line">最后，使用XMind总结测试计划</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="测试用例包含那些内容"><a href="#测试用例包含那些内容" class="headerlink" title="测试用例包含那些内容"></a>测试用例包含那些内容</h2><p>测试用例的定义：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">测试用例就是为某个业务目标，而编制的一些测试数据、执行条件以及预期结果组成的案例。</span><br></pre></td></tr></table></figure>
-
-<p>测试用例包含以下16个要素：（9个核心）</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">用例ID：用例的编号</span><br><span class="line">用例标题：需要做到见名知意</span><br><span class="line">所属模块：注明此用例属于那个功能模块</span><br><span class="line">优先级：  要分出先后（功能主要程度）</span><br><span class="line">前置条件：测试这个功能时需要的一些资源（如管理员账号或普通用户账号等）</span><br><span class="line">操作步骤：打开这个界面的顺序</span><br><span class="line">测试数据：输入的内容</span><br><span class="line">预期结果：知道操作步骤和测试数据后结果就知道了（应该有的结果）</span><br><span class="line">实际结果：于预期结果不同（大概率是BUG）</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">通过否： y/n</span><br><span class="line">bugID: bug编号</span><br><span class="line">编写人员：编写用例的人员名字</span><br><span class="line">编写时间：</span><br><span class="line">测试人员：测试人员名字</span><br><span class="line">测试时间：</span><br><span class="line">备注：</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="设计测试用例的方法：7个方法"><a href="#设计测试用例的方法：7个方法" class="headerlink" title="设计测试用例的方法：7个方法"></a>设计测试用例的方法：7个方法</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">设计用例的七个方法：</span><br><span class="line">- 等价类划分法</span><br><span class="line">- 边界值分析法</span><br><span class="line">- 场景法</span><br><span class="line">- 错误推测法</span><br><span class="line">- 判定表</span><br><span class="line">- 因果图</span><br><span class="line">- 正交实验法</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="等价类划分法"><a href="#等价类划分法" class="headerlink" title="等价类划分法"></a>等价类划分法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">等价，顾名思义就是价值相同的意思，等价类划分法就是把可能要使用的数据进行价值分类，每一类取一些具有代表性的数据进行测试。</span><br><span class="line"></span><br><span class="line">分类：</span><br><span class="line">有效等价类：符合《需求说明书》，输入合理的数据集合</span><br><span class="line">无效等价类：不符合《需求说明书》，输入不合理的数据集合</span><br><span class="line"></span><br><span class="line">类型：</span><br><span class="line">取值范围：输入学生成绩0-100</span><br><span class="line">恒等类型：只有一个结果是正确的，其他都是错误的（彩票一等奖）</span><br><span class="line">布尔值型：通过是否进行选择，（同意协议）</span><br><span class="line">枚举类型：给出选项内容，只要符合一个就可以（冲话费）</span><br><span class="line">规则类型：规定要求，满足要求就可以（邮箱）</span><br><span class="line">无要求文本框类型：任意字符都可输入，中文、英文，符号等（反馈信息）</span><br></pre></td></tr></table></figure>
-
-<p>案例：<img src="C:\Users\Administrator\Desktop\测试笔记\img\等价类案例.jpg"></p>
-<p>结果：</p>
-<p><img src="C:\Users\Administrator\Desktop\测试笔记\img\等价类案例结果.jpg"></p>
-<h3 id="边界值分析法"><a href="#边界值分析法" class="headerlink" title="边界值分析法"></a>边界值分析法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line">边界值分析法是取高于或者低于边界的一些数据进行测试。</span><br><span class="line"></span><br><span class="line">原因：</span><br><span class="line">避免程序开发时循环体取数时搞错&gt;&lt;=</span><br><span class="line"></span><br><span class="line">确定边界值的方法:</span><br><span class="line">边界值分为上点、离点、内点。</span><br><span class="line">上点：是指边界上的点（一段有序数组的头和尾就是上点）</span><br><span class="line">内点：范围内的点（一段有序数组从头到尾之间的所有都是内点）</span><br><span class="line">离点：距离上点最近的一个点。（开内闭外取值）</span><br><span class="line"></span><br><span class="line">开区间: 不包含=的,   可以使用()表示</span><br><span class="line">闭区间: 包含等于的, 可以使用[]表示</span><br><span class="line"></span><br><span class="line">例如成绩:</span><br><span class="line">0&lt;=X&gt;=100   左闭右闭     [0,100]    离点：-1  2  101</span><br><span class="line">0&lt;X&gt;=100    左开右闭     (0,100]    离点：1   2  101</span><br><span class="line">0&lt;=X&gt;100    右闭左开     [0,100)    离点：-1  2  99</span><br><span class="line">0&lt;X&gt;100     左开右开     (0,100)    离点：1   2  99</span><br></pre></td></tr></table></figure>
-
-
-
-<h3 id="场景法"><a href="#场景法" class="headerlink" title="场景法"></a>场景法</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">定义：</span><br><span class="line">对功能点或业务场景的描述进行业务模拟，从而提取高效的测试方法。即画业务流程图。</span><br><span class="line"></span><br><span class="line">基本流:正确完成的流程    (正例)</span><br><span class="line">备选流:存在异常的流程，对于基本流每一步都取反     (反例)</span><br></pre></td></tr></table></figure>
-
-<p>原理图：</p>
-<p><img src="C:\Users\Administrator\Desktop\测试笔记\img\场景法原理图.jpg"></p>
-<p>ATM引入场景法：</p>
-<p><img src="C:\Users\Administrator\Desktop\测试笔记\img\ATM机场景法.jpg"></p>
-<h3 id="你提交的BUG都提交那些内容"><a href="#你提交的BUG都提交那些内容" class="headerlink" title="你提交的BUG都提交那些内容"></a>你提交的BUG都提交那些内容</h3><p>缺陷编号、严重程度、优先级、所属模块、缺陷状态、测试环境、测试机、指派人、缺陷类型、缺陷标题、重现步骤、预期结果、实际结果、提交人、提交时间、测试用例、附件</p>
-<p><img src="F:\blog\hexo_blog\source\images\提交bug的内容.jpg"></p>
-<h3 id="bug流转的过程-x2F-bug的状态"><a href="#bug流转的过程-x2F-bug的状态" class="headerlink" title="bug流转的过程&#x2F;bug的状态"></a>bug流转的过程&#x2F;bug的状态</h3><p><img src="F:\blog\hexo_blog\source\images\Bug的流转状态.jpg"></p>
 
       
     </div>
@@ -474,7 +414,7 @@
     
     <li class="post-copyright-link hidden-xs">
       <strong>本文链接：</strong>
-      <a href="http://sunjunyu.cn/2020/05/26/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" title="软件测试" target="_blank" rel="external">http://sunjunyu.cn/2020/05/26/软件测试/</a>
+      <a href="http://sunjunyu.cn/2020/08/09/git/" title="git命令" target="_blank" rel="external">http://sunjunyu.cn/2020/08/09/git/</a>
     </li>
     
     <li class="post-copyright-license">
@@ -520,10 +460,10 @@
   
   <ul class="pager pull-left">
     
-    <li class="prev">
-      <a href="/2020/05/27/sql%E6%93%8D%E4%BD%9C/" title="SQL操作"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
-    </li>
     
+    <li class="next">
+      <a href="/2020/08/08/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" title="软件开发基础"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
     
     
   </ul>
