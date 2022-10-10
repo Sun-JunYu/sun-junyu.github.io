@@ -1,3 +1,4 @@
+http://sunjunyu.cn/2020/06/19/sql%E6%A1%88%E4%BE%8B/
 http://sunjunyu.cn/2020/05/27/sql%E6%93%8D%E4%BD%9C/
 http://sunjunyu.cn/2020/07/26/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/
 http://sunjunyu.cn/2020/08/08/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/
@@ -35,6 +36,8 @@ http://sunjunyu.cn/tags/http-https/
 http://sunjunyu.cn/tags/get-post/
 http://sunjunyu.cn/tags/%E7%8A%B6%E6%80%81%E7%A0%81/
 http://sunjunyu.cn/tags/http%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/
+http://sunjunyu.cn/tags/sql%E8%AF%AD%E5%8F%A5/
+http://sunjunyu.cn/tags/sql%E6%A1%88%E4%BE%8B/
 http://sunjunyu.cn/categories/Linux/
 http://sunjunyu.cn/categories/SQL/
 http://sunjunyu.cn/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/
@@ -42,3 +45,4 @@ http://sunjunyu.cn/categories/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/
 http://sunjunyu.cn/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/
 http://sunjunyu.cn/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/
 http://sunjunyu.cn/categories/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/
+http://sunjunyu.cn/categories/SQL%E6%A1%88%E4%BE%8B/
