@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>测试高频面试题-功能测试 | 蓝桉个人博客</title>
+  <meta name="description" content="1.app和web测试的相同点和不同点 ***123456789101112相同点：A.测试用例相同。B.同样的测试方法：都会依据效果图来检查UI,根据需求文档测试功能。C.都需要兼容性测试D.都需要测试应用系统的稳定性。不同点：A.App的安装卸载测试（全新安装，升级安装，第三方工具安装，第三方工具卸载，直接卸载删除）,web没有安装卸载一说B.app消息推送测试，手机授权测试，前后台切换。C.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试高频面试题-功能测试">
+<meta property="og:url" content="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:site_name" content="LanAn Blog">
+<meta property="og:description" content="1.app和web测试的相同点和不同点 ***123456789101112相同点：A.测试用例相同。B.同样的测试方法：都会依据效果图来检查UI,根据需求文档测试功能。C.都需要兼容性测试D.都需要测试应用系统的稳定性。不同点：A.App的安装卸载测试（全新安装，升级安装，第三方工具安装，第三方工具卸载，直接卸载删除）,web没有安装卸载一说B.app消息推送测试，手机授权测试，前后台切换。C.">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://sunjunyu.cn/img%5Cimg03.jpg">
+<meta property="og:image" content="https://sunjunyu.cn/images/V%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="https://sunjunyu.cn/images/M%E6%A8%A1%E5%9E%8B.jpg">
+<meta property="og:image" content="https://sunjunyu.cn/images/%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg">
+<meta property="og:image" content="https://sunjunyu.cn/images/%E6%B5%8B%E8%AF%95%E9%98%B6%E6%AE%B5.jpg">
+<meta property="article:published_time" content="2022-09-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-12T01:13:00.175Z">
+<meta property="article:author" content="蓝桉">
+<meta property="article:tag" content="高频面试题">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="功能测试">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://sunjunyu.cn/img%5Cimg03.jpg">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="LanAn Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="sunjunyu.cn" target="_blank">
+          <img class="img-circle img-rotate" src="/images/%E5%A4%B4%E5%83%8F.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">蓝桉</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">欢迎交流与分享经验</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> BeiJing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Sun-JunYu" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5814038760" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL%E6%A1%88%E4%BE%8B/">SQL案例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git%E5%91%BD%E4%BB%A4/">git命令</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">接口测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-功能测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-性能测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">测试高频面试题-接口测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">测试高频面试题-自动化测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">软件开发基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/">软件缺陷</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get-post/" rel="tag">get&#x2F;post</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git%E5%91%BD%E4%BB%A4/" rel="tag">git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-https/" rel="tag">http&#x2F;https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" rel="tag">http请求组成</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E6%A1%88%E4%BE%8B/" rel="tag">sql案例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E8%AF%AD%E5%8F%A5/" rel="tag">sql语句</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">功能测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" rel="tag">开发模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" rel="tag">接口测试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" rel="tag">测试分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B/" rel="tag">测试模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%96%B9%E6%B3%95/" rel="tag">测试用例方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/" rel="tag">版本控制工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E6%80%81%E7%A0%81/" rel="tag">状态码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%BA%E9%99%B7%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0/" rel="tag">缺陷产生原因</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%BA%E9%99%B7%E5%88%86%E7%B1%BB/" rel="tag">缺陷分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" rel="tag">网络基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" rel="tag">自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E7%B1%BB/" rel="tag">软件分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" rel="tag">软件开发基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81/" rel="tag">软件开发生态</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" rel="tag">软件测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/" rel="tag">软件缺陷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/" rel="tag">软件质量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">高频面试题</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Charles/" style="font-size: 13px;">Charles</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/SQL/" style="font-size: 13px;">SQL</a> <a href="/tags/get-post/" style="font-size: 13px;">get/post</a> <a href="/tags/git%E5%91%BD%E4%BB%A4/" style="font-size: 13px;">git命令</a> <a href="/tags/http-https/" style="font-size: 13px;">http/https</a> <a href="/tags/http%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" style="font-size: 13px;">http请求组成</a> <a href="/tags/sql%E6%A1%88%E4%BE%8B/" style="font-size: 13px;">sql案例</a> <a href="/tags/sql%E8%AF%AD%E5%8F%A5/" style="font-size: 13px;">sql语句</a> <a href="/tags/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">功能测试</a> <a href="/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">开发模式</a> <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">性能测试</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 13px;">抓包</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" style="font-size: 13.5px;">接口测试</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 14px;">测试</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" style="font-size: 13px;">测试分类</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B/" style="font-size: 13px;">测试模型</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%96%B9%E6%B3%95/" style="font-size: 13px;">测试用例方法</a> <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/" style="font-size: 13px;">版本控制工具</a> <a href="/tags/%E7%8A%B6%E6%80%81%E7%A0%81/" style="font-size: 13px;">状态码</a> <a href="/tags/%E7%BC%BA%E9%99%B7%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0/" style="font-size: 13px;">缺陷产生原因</a> <a href="/tags/%E7%BC%BA%E9%99%B7%E5%88%86%E7%B1%BB/" style="font-size: 13px;">缺陷分类</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">网络基础</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">自动化测试</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E7%B1%BB/" style="font-size: 13px;">软件分类</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">软件开发基础</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81/" style="font-size: 13px;">软件开发生态</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">软件测试</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/" style="font-size: 13px;">软件缺陷</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/" style="font-size: 13px;">软件质量</a> <a href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 14px;">高频面试题</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-功能测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-功能测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-性能测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-性能测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">测试高频面试题-接口测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-接口测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">测试高频面试题-自动化测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-自动化测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/git%E5%91%BD%E4%BB%A4/">git命令</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/08/09/git/" class="title">git命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-08-08T16:00:00.000Z" itemprop="datePublished">2020-08-09</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-高频面试题-功能测试" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      测试高频面试题-功能测试
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="article-date">
+	  <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-功能测试</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">功能测试</a>, <a class="article-tag-link-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a>, <a class="article-tag-link-link" href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">高频面试题</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h3 id="1-app和web测试的相同点和不同点"><a href="#1-app和web测试的相同点和不同点" class="headerlink" title="1.app和web测试的相同点和不同点 ***"></a>1.app和web测试的相同点和不同点 ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">相同点：</span><br><span class="line">A.测试用例相同。</span><br><span class="line">B.同样的测试方法：都会依据效果图来检查UI,根据需求文档测试功能。</span><br><span class="line">C.都需要兼容性测试</span><br><span class="line">D.都需要测试应用系统的稳定性。</span><br><span class="line">不同点：</span><br><span class="line">A.App的安装卸载测试（全新安装，升级安装，第三方工具安装，第三方工具卸载，直接卸载删除）,web没有安装卸载一说</span><br><span class="line">B.app消息推送测试，手机授权测试，前后台切换。</span><br><span class="line">C.App的中断测试：来电中断，短信中断，蓝牙，闹钟，拔插数据线，手机锁定，手机断电，手机问题（系统死机重启）。</span><br><span class="line">D.兼容性测试：Web项目考虑不同内核的浏览器兼容，app需要考虑手机不同的操作系统（android/ios），不同的操作系统版本,不同机型，不同屏幕分辨率等。</span><br><span class="line">E.网路测试：不同网络与运营商，目前我国有三大运营商如：电信，移动，联通，不同的网络制式，如：GSM,CDMA,3G，4G，5G等，在不好或无网络的情况下的APP行为。</span><br><span class="line">F.app测试如果设备不足，可以考虑使用云测平台（百度云测，testin云测等）。</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-app测试的关注点-x2F-app测试一般测哪些东西"><a href="#2-app测试的关注点-x2F-app测试一般测哪些东西" class="headerlink" title="2.app测试的关注点&#x2F;app测试一般测哪些东西 ***"></a>2.app测试的关注点&#x2F;app测试一般测哪些东西 ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">功能测试，安装卸载测试，升级测试，安全性测试，消息推送，前后台切换，ui测试，兼容性测试，网络环境测试，性能测试，中断测试</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-web测试的关注点"><a href="#3-web测试的关注点" class="headerlink" title="3.web测试的关注点 ***"></a>3.web测试的关注点 ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">功能测试，兼容性测试，ui测试 ,安全性测试</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-如何确保测试用例覆盖所有需求点-x2F-如何保证产品的质量"><a href="#4-如何确保测试用例覆盖所有需求点-x2F-如何保证产品的质量" class="headerlink" title="4.如何确保测试用例覆盖所有需求点 &#x2F;如何保证产品的质量**"></a>4.如何确保测试用例覆盖所有需求点 &#x2F;如何保证产品的质量**</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">测试用例覆盖率很难达到100%，越复杂的功能越难保证，只能说尽量提高测试覆盖率。</span><br><span class="line"></span><br><span class="line">通过以下手段可以提高覆盖率：</span><br><span class="line">1、编写测试用例前，检查相关需求、设计文档是否有问题（功能描述不清，设计逻辑缺陷），如有问题找相关设计或者开发问清楚。</span><br><span class="line">2、然后整理成需要覆盖的功能列表或者思维导图，功能列表包含新增和修改功能点，性能需求也要列出来（因为要整理对应的性能测试用例）</span><br><span class="line">3、需要对既有功能进行一个梳理（显性需求和隐形需求都要分析），还需要检查是否会与其他功能有交互，整理出影响点。</span><br><span class="line">4、把功能列表发给组员，并找时间进行会议评审，主要对功能等进行查漏补缺。</span><br><span class="line">5、最后才行进测试用例编写，注意编写规范。</span><br><span class="line">6、编写完毕后，把测试用例发给组员，开会进行评审，主要对检查点、用例规范进行查漏补缺。</span><br><span class="line">7、执行测试用例过程中，发现用例不完善或者错误，需对测试用例进行及时的修改与调优</span><br><span class="line">8、测试完毕后对漏测的bug进行测试用例补充。</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-你提交bug的时候提交哪些内容？"><a href="#5-你提交bug的时候提交哪些内容？" class="headerlink" title="5.你提交bug的时候提交哪些内容？***"></a>5.你提交bug的时候提交哪些内容？***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">标题，复现步骤，预期结果，实际结果，测试环境，优先级，严重程度，指派给谁，所属模块，附件，缺陷类型</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-bug状态-x2F-bug流转过程"><a href="#6-bug状态-x2F-bug流转过程" class="headerlink" title="6.bug状态&#x2F;bug流转过程 **"></a>6.bug状态&#x2F;bug流转过程 **</h3><p><img src="/img%5Cimg03.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">新建：刚发现的缺陷</span><br><span class="line">已指派：已经由测试人员将缺陷指派给开发人员进行处理</span><br><span class="line">已打开：开发人员正在修复缺陷</span><br><span class="line">已修复：开发人员完成缺陷修复，还未进行回归测试</span><br><span class="line">已拒绝：发开人员拒绝修复</span><br><span class="line">已延期：对缺陷进行延缓处理</span><br><span class="line">已关闭：由测试人员回归测试后，缺陷不存在了</span><br><span class="line">重新打开：由测试人员回归测试后，发现缺陷任然存在</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-开发不认bug-x2F-如果你发现了一个bug，开发不认，怎么办？"><a href="#7-开发不认bug-x2F-如果你发现了一个bug，开发不认，怎么办？" class="headerlink" title="7.开发不认bug&#x2F;如果你发现了一个bug，开发不认，怎么办？***"></a>7.开发不认bug&#x2F;如果你发现了一个bug，开发不认，怎么办？***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.找开发沟通，看他为什么不认,可能有两种情况</span><br><span class="line">2.第一种情况：开发可能说，产品改需求了，</span><br><span class="line">	----我们需要找产品确认，如果是改了，根据新需求改用例，改完重新测试</span><br><span class="line">	----                如果产品说没有改，把他们叫到一起，确认</span><br><span class="line">3.第二种情况：需求没有改，双方理解的需求不一致，一起找产品确定，</span><br><span class="line">	----开发理解的正确，根据新的理解改用例，改完重新测试</span><br><span class="line">	----我们理解的正确，让开发改bug</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-bug不能复现咋办？"><a href="#8-bug不能复现咋办？" class="headerlink" title="8.bug不能复现咋办？ **"></a>8.bug不能复现咋办？ **</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">A.首先考虑环境问题，看是否能够还原原来的环境</span><br><span class="line">B.尽量回想发生问题时的复现步骤，不要漏掉任何一个细节，按照步骤的组合尝试复现</span><br><span class="line">C.与开发人员配合，让开发人员对相应的代码检查，看是否通过代码层面检查出问题</span><br><span class="line">D.保留发生bug时的log，附加到提交的Bug中，希望可以通过log中找到一些蛛丝马迹。</span><br><span class="line">E.查看代码，也许是代码变更，引起的Bug</span><br><span class="line">F.遇到问题就要提，不能放过任何一个Bug，在提交的Bug描述中加上一句话，那就是复现概率，尝试20次，出现一次或尝试10次，交给开发，开发会根据Bug的复现概率，调整改Bug的优先级。</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-你在项目中最经典的BUG是什么？-x2F-你印象最深的一个bug"><a href="#9-你在项目中最经典的BUG是什么？-x2F-你印象最深的一个bug" class="headerlink" title="9.你在项目中最经典的BUG是什么？&#x2F;你印象最深的一个bug ***"></a>9.你在项目中最经典的BUG是什么？&#x2F;你印象最深的一个bug ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">开放题，可以说涉及到前后端的问题,将定位饭分析的过程,之前讲过两个业务逻辑（processon上画过图）</span><br><span class="line">比如</span><br><span class="line">	小明在淘宝app 商品详情中 点击了添加购物车 ,然后进入购物车后发现购物车中没有该条商品.</span><br><span class="line">或者</span><br><span class="line">	小明在淘宝app中 支付了一笔订单(微信支付), 然后发现 本应该订单依然还在 待支付中, 待发货中没有该笔订单, 而小明的账户上的钱已经被扣除了.</span><br><span class="line"></span><br><span class="line">自己编类似的bug，然后给出分析和定位问题的过程</span><br><span class="line"></span><br><span class="line">最终问题是哪里的，你是怎么定位出来的</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-用例评审的流程，通过的规则-x2F-审核内容是什么"><a href="#10-用例评审的流程，通过的规则-x2F-审核内容是什么" class="headerlink" title="10.用例评审的流程，通过的规则&#x2F;审核内容是什么 *"></a>10.用例评审的流程，通过的规则&#x2F;审核内容是什么 *</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">两轮：内部评审，外部评审（产品，开发）</span><br><span class="line"></span><br><span class="line">评审内容：</span><br><span class="line">1.用例设计的结构安排是否清晰、合理,是否利于高效对需求进行覆盖。</span><br><span class="line">2.优先级安排是否合理。</span><br><span class="line">3.是否覆盖测试需求上的所有功能点</span><br><span class="line">4.用例是否具有很好可执行性.例如用例的前提条件、执行步骤、输入数据和期待结果是否清晰、正确；期待结果是否有明显的验证方法</span><br><span class="line">5.是否已经删除了冗余的用例</span><br><span class="line">6.是否包含充分的负面测试用例（反例）。充分的定义，如果在这里使用2/8法则，那就是4倍于正面用例的量，毕竟一个健壮的软件,其中80％的代码都是在“保护”20％的功能实现</span><br><span class="line">7.是否从用户层面来设计用户使用场景和使用流程的测试用例</span><br><span class="line">8.是否简洁，复用性强。例如，可将重复度高的步骤或过程抽取出来定义为一些可复用标准步骤。</span><br><span class="line">9.用例是否按照公司规定模板进行编写</span><br><span class="line"></span><br><span class="line">用例评审的检查项（不用背）：</span><br><span class="line">1.用例是否按照公司定义的模板进行编写</span><br><span class="line">2.用例的本身描述是否清晰，是否存在歧义</span><br><span class="line">3.用例内容是否正确，是否与需求目标一致</span><br><span class="line">4.用例的期望结果是否确定，唯一</span><br><span class="line">5.操作步骤应与描述一致</span><br><span class="line">6.是否覆盖了所有需求 **</span><br><span class="line">7.用例是否冗余 ** </span><br><span class="line">8.是否具有可执行性</span><br><span class="line">9.是否是从用户层面来设计用户使用场景和使用流程的测试用例</span><br><span class="line">10.场景测试用例是否覆盖最复杂的业务流程</span><br><span class="line">11.是否包含正面，反面的用例  **</span><br><span class="line">12.对于系统自动生成的输出项是否注明了生成规则</span><br><span class="line">13.测试用例应包含对中间和后台数据的检查</span><br><span class="line">14.是否有正确的名称和编号</span><br><span class="line">15.是否标明优先级</span><br><span class="line">16.是否包含配置信息：测试环境，数据，前置条件，用户授权等</span><br><span class="line">17.测试步骤应具体，清晰</span><br><span class="line">18.自动化测试脚本必须带有注解（包括：目的，输入，期望结果等）</span><br><span class="line">19.非功能测试需求或不可测试需求是否再用例中列出并说明</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-你们公司测试计划谁写？有哪些内容"><a href="#11-你们公司测试计划谁写？有哪些内容" class="headerlink" title="11.你们公司测试计划谁写？有哪些内容 *"></a>11.你们公司测试计划谁写？有哪些内容 *</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">一般是测试经理/测试组长写，</span><br><span class="line">测试目的，测试资源，测试范围，测试风险（重点），人员分工（重点），测试策略，测试准则，测试进度（重点），测试输出</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-v模型和w模型"><a href="#12-v模型和w模型" class="headerlink" title="12.v模型和w模型  **"></a>12.v模型和w模型  **</h3><p><img src="https://sunjunyu.cn/images/V%E6%A8%A1%E5%9E%8B.jpg"></p>
+<p><img src="https://sunjunyu.cn/images/M%E6%A8%A1%E5%9E%8B.jpg"></p>
+<h3 id="13-测试用例（case）-x2F-测试点该怎么写（给定业务说测试点，比如水杯测试点，抖音评论-x2F-发红包-x2F-转账-x2F-朋友圈点赞-x2F-登录测试点）"><a href="#13-测试用例（case）-x2F-测试点该怎么写（给定业务说测试点，比如水杯测试点，抖音评论-x2F-发红包-x2F-转账-x2F-朋友圈点赞-x2F-登录测试点）" class="headerlink" title="13.测试用例（case）&#x2F;测试点该怎么写（给定业务说测试点，比如水杯测试点，抖音评论&#x2F;发红包&#x2F;转账&#x2F;朋友圈点赞&#x2F;登录测试点）"></a>13.测试用例（case）&#x2F;测试点该怎么写（给定业务说测试点，比如水杯测试点，抖音评论&#x2F;发红包&#x2F;转账&#x2F;朋友圈点赞&#x2F;登录测试点）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br></pre></td><td class="code"><pre><span class="line">分析：可以从  功能，性能，ui，易用性，安全，兼容性，app专项测试（如果是移动端项目的话）  这七方面展开说，采用总分的形式说，先说可以从五方面考虑，再每个方面细说，结合设计测试用例的方法</span><br><span class="line"></span><br><span class="line">- 微信红包：</span><br><span class="line">--功能-单个红包：				</span><br><span class="line">1、红包金额为空、0、0.01、200.00、200.01、199.99、200</span><br><span class="line">2、留言输入数字、字母、汉字、特殊字符</span><br><span class="line">3、留言长度</span><br><span class="line">4、留言复制粘贴</span><br><span class="line">5、表情选择收藏表情、其他表情</span><br><span class="line">6、删除表情、重新选择表情</span><br><span class="line">7、选择支付方式 零钱、银行卡、添加新卡支付。其中钱数&lt;红包钱数、其中钱数=红包钱数、其中钱数&gt;红包钱数</span><br><span class="line">8、使用指纹确认付款（正确的、错误的指纹）</span><br><span class="line">9、使用密码确认付款（正确的、错误的密码）</span><br><span class="line">10、红包成功发送后 相应支付方式中钱数减少（减少金额与红包金额一致）</span><br><span class="line">11、接受者能看到红包具体信息，红包金额、留言、表情均能正确显示</span><br><span class="line">12、红包被拆开后显示已领取，领取者零钱中增加正确金额，再次领取只能查看红包信息</span><br><span class="line">13、发红包者自己领红包</span><br><span class="line">14、红包24小时未被领取提示红包被退回，相应支付方式中钱数增加（增加金额与红包金额一致），对方不能领红包</span><br><span class="line"></span><br><span class="line">-- 功能-群发红包-普通红包：（只写了与单个红包不同的地方）</span><br><span class="line">1、红包个数 为空、0、001、100、99、101</span><br><span class="line">2、红包拆开每个金额一样 均为发红包时设置的单个金额对应的钱数</span><br><span class="line">3、红包被拆时，有相应提示</span><br><span class="line">4、发红包者自己领红包</span><br><span class="line">5、红包24小时内未被拆完，剩余钱被退回，相应支付方式中钱数增加</span><br><span class="line"></span><br><span class="line">-- 群发红包-拼手气红包：</span><br><span class="line">1、红包总额/红包个数&lt;0.01</span><br><span class="line">2、红包每个人拆开金额不同，总金额与发红包设置的总额一致</span><br><span class="line">3、红包24小时内拆完后显示最佳手气</span><br><span class="line">4、红包24小时内未被拆完不显示最佳手气</span><br><span class="line"></span><br><span class="line">兼容性：安卓、苹果 不同型号版本手机</span><br><span class="line">UI测试：界面无错别字，风格统一, 和设计图保持一致</span><br><span class="line">中断测试：不同应用之间切换、断网、来电、短信、低电量、手机没电</span><br><span class="line">网络测试：2g/3g/4g/5g  WiFi 移动联通电信  弱网  无网　　</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 朋友圈点赞：</span><br><span class="line">-- 功能测试</span><br><span class="line">1.点赞后是否显示结果；</span><br><span class="line">2.点赞后是否可以取消；</span><br><span class="line">3.点赞取消后是否可以重复点赞；</span><br><span class="line">4.共同好友点赞后，是否有消息提醒；</span><br><span class="line">5.非共同好友点赞后，是否有消息提醒；</span><br><span class="line">6.点击点赞人昵称，是否可以跳转到他/她的主页；</span><br><span class="line">7.自己能否给自己点赞；</span><br><span class="line">8.屏蔽了该用户，共同好友点赞是否提示；</span><br><span class="line">9.点赞人有备注时，是否展示备注昵称；</span><br><span class="line">10.点赞后删除好友，是否继续展示其点赞；</span><br><span class="line"></span><br><span class="line">-- UI界面测试</span><br><span class="line">1.界面是否简介美观；</span><br><span class="line">2.点赞后动态特效是否正常显示；</span><br><span class="line">3.朋友圈界面图片是否正常显示；</span><br><span class="line">4.朋友圈界面文字是否正常显示；</span><br><span class="line">-- 性能测试</span><br><span class="line">1.点赞人数过多是否能正常显示；</span><br><span class="line">2.同一时间点赞人数过多是否正常收到提示；、</span><br><span class="line">-- 安全测试</span><br><span class="line">1.发送部分可见的朋友圈，其余人不可见；</span><br><span class="line">2.发送部分可见的朋友圈，点赞后共同好友不可见；</span><br><span class="line">-- 弱网测试</span><br><span class="line">1.弱网环境下，点赞是否成功；</span><br><span class="line">2.弱网环境下，点赞的时间；</span><br><span class="line">-- 易用性测试</span><br><span class="line">发送部分可见，是否可以沿用上次的名单；</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 淘宝搜索框：</span><br><span class="line">-- 功能测试：</span><br><span class="line">1.输入可查到结果的正常关键字，检索到的内容、链接准确性</span><br><span class="line">2.输入不可查到结果的关键字，有无错误信息提示</span><br><span class="line">3.输入一些特殊的内容，如空字符、特殊字符等，可引入等价类划分的方法等</span><br><span class="line">4.返回的商品结果排序：价格、销量、评价、综合</span><br><span class="line">5.返回结果庞大时，限制第一页的输出量，需支持翻页</span><br><span class="line">6.多选项搜索：关键字、品牌、产地、价格区间、 是否天猫、是否全国购</span><br><span class="line">7.是否支持模糊搜索，支持通配符的查询</span><br><span class="line">8.网速慢的情况下的搜索</span><br><span class="line">9.搜索结果为空的情况</span><br><span class="line">10.未登录情况和登录情况下的搜索（登录情况下，存储用户搜索的关键字、搜索习惯）</span><br><span class="line"></span><br><span class="line">-- 性能测试：</span><br><span class="line">1.压力测试：在不同开发用户数压力下的表现（评价指标如响应时间等）</span><br><span class="line">2.负载测试：看极限能承载多大用户量同时正常使用</span><br><span class="line">3.稳定性测试：常规压力下能保持多久持续稳定运行</span><br><span class="line">4.内存测试：有无内存泄露现象</span><br><span class="line">5.大数据量测试：如模拟从海量数据中搜索结果、搜索出的海量结果列示出来，如何表现等</span><br><span class="line"></span><br><span class="line">-- 易用性测试：</span><br><span class="line">1.交互界面的设计是否便于、易于使用</span><br><span class="line">2.依据不同的查询结果会有相关的人性化提示，查不到时告知，查到时统计条数并告知，有疑似输入条件错误时提示可能正确的输入项等等处理</span><br><span class="line">3.查询出的结果罗列有序，如按销量或其他排序综合，确保每次查询的结果位置按规则列示方便定位，显示字体、字号、色彩便于识别等等</span><br><span class="line">4.标题查询、全文检索、模糊查询、容错查询、多关键字组织查询（空格隔开）等实用检索方式是否正常</span><br><span class="line">5.输入搜索条件的空间风格设计、位置摆放是否醒目便于使用者注意到，有无快照等快捷查询方式等人性化设计</span><br><span class="line"></span><br><span class="line">-- 兼容性：</span><br><span class="line">1.Windows/Linux等各类操作系统下及各版本下的应用</span><br><span class="line">2.IE/Fireox/Goolge/360/QQ/edge等各类浏览器下及各版本下、各种显示分辨率条件下的应用</span><br><span class="line">3.SQL/ORACLE/MySQL等各类数据库存储下的兼容性测试</span><br><span class="line">4.简体中文、繁体中文、英文等各类语种软件平台下的兼容性测试</span><br><span class="line">5.iphone/ipad/安卓等各类移动应用平台下的兼容性测试</span><br><span class="line">6.与个相关的监控程序的兼容性测试，如输入法、杀毒、监控、防火墙等工具同时使用</span><br><span class="line"></span><br><span class="line">-- 安全性:</span><br><span class="line">1.被删除、加密、授权的数据，不允许被SQL注入等攻击方式查出，是否有安全控制设计</span><br><span class="line">2.录入一些数据库查询的保留字符，如单引号、%等，造成查询SQL拼接出来的语句产生漏洞，如可以查出所有数据等等，这方面要有一些黑客攻击的思想并引入一些工具和技术，如爬网等</span><br><span class="line">3.通过白盒测试技术，检查一下在程序设计上是否存在安全方面的隐患</span><br><span class="line">4.对涉及国家安全、法律禁止的内容是否进行了相关的过滤和控制</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">- 购物车：</span><br><span class="line">-- 界面测试</span><br><span class="line">1.打开淘宝购物车页面后，页面的布局是否合理，是否完整。</span><br><span class="line">2.不同卖家的商品在不同的table区域显示，区分明显。</span><br><span class="line">3.页面的功能按钮可以正常显示。</span><br><span class="line">4.商品的最下方显示失效宝贝。</span><br><span class="line">5.页面的最低端显示“你可能喜欢”</span><br><span class="line">6.向下滑动页面，在购物车顶端展示“购物车”。</span><br><span class="line">7.购物车中如果存在有商品降价、库存不足、限购件数等，在商品详情的下面，会有对应的字体展示。</span><br><span class="line"></span><br><span class="line">-- 基本功能</span><br><span class="line">1.购物车页面的所有连接是否正常。</span><br><span class="line">2.从商品信息页面添加的商品能显示在购物车中。</span><br><span class="line">3.若未登录，点击购物车中的商品直接进行结算，则提示用户输入用户名和密码，或者提示用户进行注册。</span><br><span class="line">4.若没有选择任何商品，点击结算，则提示用户“请添加要结算的商品”。</span><br><span class="line">5.勾选商品后，已选商品的总价（和优惠满减活动）会显示。</span><br><span class="line">6.勾选商品，点击结算按钮后，进去确认订单信息页面。</span><br><span class="line">7.购物车页面中，可以对添加商品信息做信息的修改，并自动保存成功。</span><br><span class="line">8.可以在购物车中重新修改商品规格。</span><br><span class="line">9.购物车能添加的商品种类是有数量上限的。</span><br><span class="line">10.结算的时候商品可以全选，选择底部的全选按钮。</span><br><span class="line">11.可以在购物车页面对宝贝进行管理。</span><br><span class="line"></span><br><span class="line">-- 性能功能易用安全界面</span><br><span class="line">1.是否能一件批量付款</span><br><span class="line">2.是否有全选、全不选的功能</span><br><span class="line">3.是否能删除商品</span><br><span class="line">4.能否把购物车了的商品移入收藏夹</span><br><span class="line">5.是否有商品规格、购买数量的显示</span><br><span class="line">6.是否有商品名称的显示</span><br><span class="line">7.是否有店铺活动、满减优惠、降价显示</span><br><span class="line">8.每个商品是否有店铺名称的提示</span><br><span class="line">9.点击商品店铺能否进入店铺查看商品</span><br><span class="line">10.点击商品名称能否进入商品详情页</span><br><span class="line">11.是否有领券的文字提示</span><br><span class="line">12.是否会显示领取优惠券之后的优惠价格</span><br><span class="line">13.失效的商品是否还会出现在购物车的历史记录中</span><br><span class="line">14.每件商品是否有对应商品图片的展示</span><br><span class="line">15.是否有凑单提示</span><br><span class="line">16.在购物车页面能否再次选择商品的种类</span><br><span class="line">17.划到购物车页面的底部，有没有推荐商品展示</span><br><span class="line">18.不支持发货的地区是否会有提示，商品前面的全选、全不选多选框是否会变灰色</span><br><span class="line">19.当没有全选、全不选的多选框，没有选择任何商品时，点击 结算 按钮是否会跳转页面</span><br><span class="line">20.是否有删除商品、批量删除的功能</span><br><span class="line">21.是否有寻找相似商品的功能</span><br><span class="line"></span><br><span class="line">-- 性能测试</span><br><span class="line">1.打开购物车时间是否在已定的用户可以棘手的时间范围内。</span><br><span class="line">2.编辑购物车：删除、添加商品需要的时间。</span><br><span class="line">3.在购物车页面选择需要购买的商品进行结算的时候，结算金额可不可以实时显示。</span><br><span class="line">4.清空失效商品需要的时间。</span><br><span class="line">5.打开购物车页面要多久</span><br><span class="line">6.快捷键功能知否支持</span><br><span class="line">-- 兼容性测试</span><br><span class="line">1.iOS：不同型号，不同的iOS系统。</span><br><span class="line">2.安卓：不同品牌，不同型号，不同的安卓系统。</span><br><span class="line">3.不同浏览器上的测试功能是否正常</span><br><span class="line"></span><br><span class="line">-- 网络环境</span><br><span class="line">1.3G、4G、WiFi网络环境下应用的各功能可正常运行。</span><br><span class="line">2.网络异常时，数据交换是否会有提醒。</span><br><span class="line">3.中途断网再很快连网，数据是否可以自动恢复，正常加载。</span><br><span class="line">4.只允许内网访问的APP，在连接到外网时是否会有提醒。</span><br><span class="line"></span><br><span class="line">-- 异常测试</span><br><span class="line">1.没有内存时，APP是否能够正常相应。</span><br><span class="line">2.横竖屏切换展示。</span><br><span class="line">3.APP运行时网络中断。</span><br><span class="line">4.反复操作某一个功能，不断点击和刷新，是否出现闪退。</span><br><span class="line">5.APP运行时接入电话、短信、社交软件的信息提示时，是否能够正常运行。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">登录测试用例设计：</span><br><span class="line">一. 界面测试设计要点:</span><br><span class="line">1. 界面的设计风格是否与UI的设计风格统一,布局是否合理, 按钮是否对齐</span><br><span class="line">2. web的话, 对页面缩放登录模块是否与缩放比例缩放</span><br><span class="line">3.界面中的文字简洁易懂,没有错别字</span><br><span class="line">二. 功能测试设计要点:</span><br><span class="line">1.  输入已注册的用户名和正确的密码，验证是否成功登录</span><br><span class="line">2.  输入已注册的用户名和不正确的密码，验证是否成功失败，且提示信息正确</span><br><span class="line">3.  输入未注册的用户名和任意密码，验证是否登录失败，且提示信息正确</span><br><span class="line">4.  使用未激活账户登录，验证是否登录失败</span><br><span class="line">5.  使用被停用用户登录，验证是否登录失败</span><br><span class="line">6.  用户名和密码两者都为空，验证是否登录失败，且提示信息正确</span><br><span class="line">7.  用户名和密码两者之一为空，验证是否登录失败，并且提示信息正确</span><br><span class="line">8.  如果登录功能启用了验证码功能，在用户名和密码正确的情况下，输入正确的验证码，验证是否登录成功</span><br><span class="line">9.  如果登录功能启用了验证码功能，在用户名和密码正确的情况下，输入错误的验证码，验证是否登录失败，且提示信息正确</span><br><span class="line">10.用户名和密码是否大小写敏感</span><br><span class="line">11.页面上的密码框是否加密显示、或者是否需要有明暗码切换按钮</span><br><span class="line">12.后台系统创建的用户第一次登录成功时，是否提示修改密码</span><br><span class="line">13.忘记用户名和忘记密码的功能是否可用</span><br><span class="line">14.前端页面是否根据设计需求限制用户名和密码长度</span><br><span class="line">15.如果登录功能需要验证码，点击验证码图片或者点击换一张是否可以更换验证码，更换后的验证码是否可用</span><br><span class="line">16.刷新页面是否会刷新验证码</span><br><span class="line">17.如果验证码有时效性，需要分别时效性内和时效性外验证码的有效性</span><br><span class="line">18.用户登录成功但是会话超时后，继续操作是否会重定向到用户登录界面</span><br><span class="line">19.不同级别的用户，比如管理员和普通用户，登录系统后权限是否正确</span><br><span class="line">20.页面默认焦点是否定位在用户输入框中</span><br><span class="line">21.快捷键Tab和Enter等，是否可以正常使用</span><br><span class="line">22.为空和输入空格字符串的校验是否一致</span><br><span class="line">23.使用中文键盘输入字母和使用英文键盘输入字母传入后端的字符长度是否一致</span><br><span class="line">24.成功登录后的session的时效设置</span><br><span class="line">25.输入栏是否设置快速删除按钮</span><br><span class="line">26.用户名和密码是否支持特殊字符和中文</span><br><span class="line">27.浏览器的前进后退按钮，是否有效</span><br><span class="line">28.成功登出后，点击浏览器回退按钮，是否可以继续操作系统</span><br><span class="line">29.需求中是否有登录时间限制，如果有验证时间限制是否有效</span><br><span class="line">30.验证不同登录方式的正确性：扫码、账号密码、第三方……</span><br><span class="line">31.若支持手机号+验证码登录，验证码是否有时间限制，移动设备是否可以直接获取验证码</span><br><span class="line">32.操作错误提示信息是否简单明了</span><br><span class="line">三. 性能测试设计要点:</span><br><span class="line">1.  单用户登录的响应时间是否小于3秒</span><br><span class="line">2.  单用户登录时，后台请求数量是否过多</span><br><span class="line">3.  高并发场景下用户登录的响应时间是否小于5秒</span><br><span class="line">4.  高并发场景下服务端的监控指标是否符合预期</span><br><span class="line">5.  高集合点并发场景下，是否存在资源死锁和不合理资源等待</span><br><span class="line">6.  长时间大量用户连续登录和登出，服务器是否存在内存泄露</span><br><span class="line">7.  输入内容校验是否加入了函数防抖</span><br><span class="line">四. 安全测试设计要点:</span><br><span class="line">1.  用户密码后台存储是否加密</span><br><span class="line">2.  用户密码在网络传输过程中是否加密</span><br><span class="line">3.  密码是否具有有效期，密码有效期到期后，是否提示需要修改密码</span><br><span class="line">4.  不登录的情况下，在浏览器中直接输入登录后的URL地址,验证是否会重新定向到用户登录界面</span><br><span class="line">5.  密码输入框是否不支持复制粘贴</span><br><span class="line">6.  密码输入框内输入的密码是否都可以在页面源码模式下被查看</span><br><span class="line">7.  用户名和密码输入框分别输入典型的“SQL注入攻击”字符串，验证系统的返回页面</span><br><span class="line">8.  用户名和密码输入框分别输入典型的“XSS跨站脚本攻击”字符串，验证系统行为是否被篡改</span><br><span class="line">9.  连续多次登录失败的情况下，系统是否会阻止后续的尝试以应对暴力破解</span><br><span class="line">10.同一用户在同一终端的多种浏览器上登录，验证登录功能的互斥性是否符合设计预期</span><br><span class="line">11.同一用户先后在多台终端的浏览器上登录，验证登录是否具有互斥性</span><br><span class="line">12.是否可以记住密码，记住的密码保存是否加密，记住的密码是否有有效期，过了有效期后是否清空密码</span><br><span class="line">13.是否支持第三方登录</span><br><span class="line">14.密码的强弱性，复杂度校验</span><br><span class="line">15.异地登录校验、更换设备登录校验、登陆信息异常是否考虑账户冻结停用、是否允许第三方平台存储密码</span><br><span class="line">16.是否可以使用登录的api发送登录请求，并绕开验证码校验</span><br><span class="line">17.是否可以用抓包工具抓到的请求包直接登录</span><br><span class="line">18.截取到的token等信息，是否可以在其他终端上直接使用，绕开登录，token过期时间校验</span><br><span class="line">19.登录错误后的提示是否存在安全隐患</span><br><span class="line">五. 兼容性测试要点:</span><br><span class="line">1.  不同浏览器下，验证登录页面的显示以及功能正确性</span><br><span class="line">2.  相同浏览器的不同版本下验证登录页面的显示以及功能正确性</span><br><span class="line">3.  不同移动设备终端的不同浏览器下，验证登录页面显示以及功能的正确性</span><br><span class="line">4.  不同分辨率的界面下，验证登录页面的显示以及功能正确性</span><br><span class="line">六. 用户体验设计要点:</span><br><span class="line">1. 输入框是否有一键清除功能</span><br><span class="line">2. 输入错误用户名/密码登录失败, 提示最好是密码或者用户名错误</span><br><span class="line">3. 输入的密码个数最好与输入框加密的个数不相同</span><br><span class="line">4. 如何验证码是纯数字, 点击验证码输入框弹出数字键盘</span><br><span class="line">5. 点击用户/密码字段可以鼠标焦点跳到对应的输入框中</span><br></pre></td></tr></table></figure>
+
+<h3 id="14-设计测试用例的七个方法"><a href="#14-设计测试用例的七个方法" class="headerlink" title="14.设计测试用例的七个方法 *"></a>14.设计测试用例的七个方法 *</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">边界值分析法，等价类划分法，场景法，错误推断法，判定表，因果图，正交实验法（前3个最常用）</span><br><span class="line"></span><br><span class="line">确定上点内点离点：(0,18],[0,18),(0,18),[0,18]</span><br><span class="line">上点：边界上的点</span><br><span class="line">内点：域内的点</span><br><span class="line">离点：离上点最近的点，开内闭外</span><br><span class="line"></span><br><span class="line">有效等价类：符合需求说明书要求的数据</span><br><span class="line">无效等价类：不符合需求说明书要求的数据</span><br></pre></td></tr></table></figure>
+
+<h3 id="15-你们公司测试工作的流程"><a href="#15-你们公司测试工作的流程" class="headerlink" title="15.你们公司测试工作的流程 ***"></a>15.你们公司测试工作的流程 ***</h3><p><img src="https://sunjunyu.cn/images/%E6%B5%8B%E8%AF%95%E6%B5%81%E7%A8%8B%E5%9B%BE.jpg"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">原型图格式：.rp</span><br><span class="line">启动的软件：axure/蓝湖在线查看</span><br><span class="line">ui设计图：蓝湖/本地设计图</span><br><span class="line">ui还原度：软件和设计图之间的</span><br></pre></td></tr></table></figure>
+
+<h3 id="16-测试报告内容"><a href="#16-测试报告内容" class="headerlink" title="16.测试报告内容*"></a>16.测试报告内容*</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">编写目的，测试人员（重点），测试环境，测试进度（重点），用例执行情况（是），缺陷统计（重点），缺陷分析（重点），测试总结（重点），风险分析（重点），遗留问题（重点）</span><br></pre></td></tr></table></figure>
+
+<h3 id="17-上线相关"><a href="#17-上线相关" class="headerlink" title="17.上线相关"></a>17.上线相关</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Android安装包后缀：.apk(之前)，.aab(android app bundle)</span><br><span class="line">ios安装包后缀：.ipa(iphone app)</span><br><span class="line"></span><br><span class="line">是否参与上线工作？？？</span><br><span class="line">只做验收，后续工作不参与，他们大概这么做的</span><br><span class="line">	后端/前端html：部署服务器</span><br><span class="line">	Android上线： 开发/项目经理 将安装包提交到各个应用市场（应用宝，360应用市场，各个手机应用，goole应用市场），进行审核，审核通过就可以上线</span><br><span class="line">	ios上线： 开发/项目经理 将安装包提交到app store，进行审核（比较严），审核通过就可以上线</span><br><span class="line"></span><br><span class="line">苹果税：是指苹果对于App Store的收费APP都会抽成30%（虚拟商品）的行为。</span><br></pre></td></tr></table></figure>
+
+<h3 id="18-如果你是测试负责人，如果下个星期三上线，你发现测试任务完不成了，怎么办？"><a href="#18-如果你是测试负责人，如果下个星期三上线，你发现测试任务完不成了，怎么办？" class="headerlink" title="18.如果你是测试负责人，如果下个星期三上线，你发现测试任务完不成了，怎么办？"></a>18.如果你是测试负责人，如果下个星期三上线，你发现测试任务完不成了，怎么办？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">分析：从两方面考虑，1.应对本次危机；2.反思为什么导致这次的危机</span><br><span class="line">第一方面：应对危机</span><br><span class="line">1.加班,其次找关系好的同事</span><br><span class="line">2.从其他组调人过来</span><br><span class="line">3.考虑延期</span><br><span class="line">4.砍掉一部分需求</span><br><span class="line">5.外包出去</span><br><span class="line">第二方面：反思</span><br><span class="line">1.测试：水平不行（换人，内部培训），人力不足（招人）</span><br><span class="line">2.产品：比如，频繁修改需求/新增需求</span><br><span class="line">3.UI：水平不行（换人，内部培训），人力不足（招人）</span><br><span class="line">4.开发：水平不行（换人，内部培训），人力不足（招人）</span><br></pre></td></tr></table></figure>
+
+<h3 id="19-黑盒测试、白盒测试、灰盒测试"><a href="#19-黑盒测试、白盒测试、灰盒测试" class="headerlink" title="19.黑盒测试、白盒测试、灰盒测试 **"></a>19.黑盒测试、白盒测试、灰盒测试 **</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">- 黑盒测试(Black Box -Test):把被测试的软件看做一个黑盒子，我们不去关心盒子里边的结构是什 么样子，只关心软件的输入数据和输出结果 有人把黑盒测试比作中医，通过“望闻问切”来判断是否有问题。</span><br><span class="line"></span><br><span class="line">  “望”:观察软件的行为是否正常。</span><br><span class="line">  “闻”:检查输出的结果是否正确。</span><br><span class="line">  “问”:输入各种信息，结合“望”，“闻”来观察软件的响应。</span><br><span class="line">  “切”:像中医一样给软件“把把脉”，敲击一下软件的某些“关节” </span><br><span class="line"></span><br><span class="line">- 白盒测试:是一种按照程序内部逻辑结构和编码结构设计测试数据并完成测试的测试方法 </span><br><span class="line"></span><br><span class="line">- 灰盒测试:一种基于程序运行时的外部表现同时又结合程序内部结构来设计测试数据的测试方法</span><br></pre></td></tr></table></figure>
+
+<h3 id="20-按照测试阶段分类，测试分为哪几类"><a href="#20-按照测试阶段分类，测试分为哪几类" class="headerlink" title="20.按照测试阶段分类，测试分为哪几类  **"></a>20.按照测试阶段分类，测试分为哪几类  **</h3><p>​	单元测试、集成测试、系统测试、验收测试</p>
+<ul>
+<li>单元测试:对一个模块、一个函数或者一个类来进行正确性检验的测试方法 </li>
+<li>集成测试:单元测试后，将单独的模块按照设计要求组装成为子系统或系统，作为整体进行测试的 测试方法</li>
+<li>系统测试:集成测试后，将硬件、软件看作一个整体,对系统的功能及性能的总体测试 </li>
+<li>验收测试:系统测试后以用户测试为主，或有测试人员共同参与检验软件质量的测试方法</li>
+</ul>
+<p><img src="https://sunjunyu.cn/images/%E6%B5%8B%E8%AF%95%E9%98%B6%E6%AE%B5.jpg"></p>
+<h3 id="21-冒烟测试和回归测试是什么"><a href="#21-冒烟测试和回归测试是什么" class="headerlink" title="21.冒烟测试和回归测试是什么  **"></a>21.冒烟测试和回归测试是什么  **</h3><ul>
+<li>冒烟测试:验证系统的核心功能是否能够正常运行的测试方法 </li>
+<li>回归测试:指开发修改bug后，重新进行测试以确认是否修复成功，修改有没有导致其他代码产生错误的测试方法</li>
+</ul>
+<h3 id="22-软件的分类"><a href="#22-软件的分类" class="headerlink" title="22.软件的分类"></a>22.软件的分类</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.根据应用场景分类：</span><br><span class="line">	工具类软件、游戏型软件、媒体型软件、电商型软件等</span><br><span class="line">2.根据软件架构分类：</span><br><span class="line">	单机版软件、分布式软件</span><br><span class="line">	2.1单机版软件：office、红警等</span><br><span class="line">	2.2分布式软件：</span><br><span class="line">		C/S架构软件:客户端需安装专门软件，如QQ 微信等</span><br><span class="line">		B/S架构软件:客户端为浏览器 ，如百度、hao123等</span><br></pre></td></tr></table></figure>
+
+<h3 id="23-BS-x2F-CS架构的区别是什么？"><a href="#23-BS-x2F-CS架构的区别是什么？" class="headerlink" title="23.BS&#x2F;CS架构的区别是什么？*"></a>23.BS&#x2F;CS架构的区别是什么？*</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">概念：所谓的架构就是用来指导我们软件开发的一种思维，目前最长见的就是BS/CS.</span><br><span class="line">B---browser 浏览器</span><br><span class="line">C---client 客户端</span><br><span class="line">S---server 服务端</span><br><span class="line">区别：</span><br><span class="line">A.标准：相对于cs架构来说Bs架构的两端都是使用现成的成熟产品，bs会显示的标准一些。</span><br><span class="line">B.效率：相对于bs架构来说cs中的客户端可以分担一些数据的处理，执行效率会高一些。</span><br><span class="line">C.安全：bs架构当中得到数据的传输都是以Http协议进行传输的，而Http协议又是明文输出。可以被抓包，那么bs架构相比cs架构显得就不那么安全了，（其实都是相对的）。</span><br><span class="line">D.升级：bs架构只需要在服务器端将数据进行更新，前台只需要刷新页面就可以升级，而cs架构必须要将两端都进行更新才可以。</span><br><span class="line">E.开发成本：相对于bs架构来说cs当中的客户端需要自己开发，bs不用，所以说cs成本会高一些。</span><br></pre></td></tr></table></figure>
+
+<h3 id="24-Android手机和IOS手机-系统有什么区别"><a href="#24-Android手机和IOS手机-系统有什么区别" class="headerlink" title="24.Android手机和IOS手机,系统有什么区别?**"></a>24.Android手机和IOS手机,系统有什么区别?**</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">A.运行机制不同:IOS采用的是沙盒运行机制,安卓采用的是虚拟机运行机制</span><br><span class="line">B.两者后台制度不同:IOS中任何第三方程序都不能在后台运行,安卓中任何程序都能在后台运行,直到没有内存才会关闭</span><br><span class="line">C.IOS中用于UI指令权限最高,安卓中数据处理指令权限最高</span><br></pre></td></tr></table></figure>
+
+<h3 id="25-你搭建过什么环境"><a href="#25-你搭建过什么环境" class="headerlink" title="25.你搭建过什么环境  ***"></a>25.你搭建过什么环境  ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.安装JDK，配置环境变量</span><br><span class="line">2.安装测试需要的工具，像Jmeter，postman，抓包工具</span><br><span class="line">3.安装Android sdk，配置环境变量，方便使用monkey对Android软件测试</span><br><span class="line">4.安装Python环境和ide，写python脚本，做接口自动化和ui自动化</span><br><span class="line">5.服务器上安装ServerAgent，监测服务器性能</span><br></pre></td></tr></table></figure>
+
+<h3 id="26-开发环境与测试环境有什么区别？"><a href="#26-开发环境与测试环境有什么区别？" class="headerlink" title="26.开发环境与测试环境有什么区别？"></a>26.开发环境与测试环境有什么区别？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">开发环境：是在编码阶段，一般我们的代码基本上都是在开发环境中，不会在生产与测试环境，如操作系统，web服务器，语言环境，php,数据库等等。</span><br><span class="line">测试环境：项目完成后，供测试找Bug,以及修改Bug后调试的环境。</span><br><span class="line">生产环境： 项目数据前后端已经疏通，部署到阿里云上有客户去使用以及访问，供用户使用的环境</span><br></pre></td></tr></table></figure>
+
+<h3 id="27-请描述下接口测试与UI测试是如何协同测试的？"><a href="#27-请描述下接口测试与UI测试是如何协同测试的？" class="headerlink" title="27.请描述下接口测试与UI测试是如何协同测试的？"></a>27.请描述下接口测试与UI测试是如何协同测试的？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">A.有一部分是重叠的，Ui测试是通过前端写的界面，是来调用接口的，而接口测试是直接调用接口。</span><br><span class="line">B.排除前端的处理逻辑与调用的正确性，在理论上接口测试是可以覆盖所有的Ui测试，但实际中，如接口层覆盖所有的业务流，在Ui上只测试前端的逻辑，而最终的结果会忽视很多原有的功能点，导致了Ui测试的不充分，那么会在人多且时间充分的时候，可以尝试接口去做业务流的全覆盖，否则不要轻易的去尝试。</span><br></pre></td></tr></table></figure>
+
+<h3 id="28-App常见崩溃的原因？"><a href="#28-App常见崩溃的原因？" class="headerlink" title="28.App常见崩溃的原因？"></a>28.App常见崩溃的原因？</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">A.设备碎片化：由于设备极具多样性，App在不同的设备上可能有不同表现形式。</span><br><span class="line">B.宽带限制：宽带不佳的的网络对APP所需的快速响应时间不够。</span><br><span class="line">C.网络的变化：不同网络间的切换可能会影响App的稳定性。</span><br><span class="line">D.内存管理：可能内存过低，或非是授权的内存位置的使用可能会导致App失败。</span><br><span class="line">E.用户过多：连续数量过多可能会导致App崩溃。</span><br><span class="line">F.代码错误：没有经过测试的新功能，可能会导致App在生产环境中失败。</span><br><span class="line">第三方服务：广告或弹出屏幕可能会导致App崩溃。   </span><br></pre></td></tr></table></figure>
+
+<h3 id="30-如何提交高质量的软件缺陷记录（报告）？"><a href="#30-如何提交高质量的软件缺陷记录（报告）？" class="headerlink" title="30.如何提交高质量的软件缺陷记录（报告）？ *"></a>30.如何提交高质量的软件缺陷记录（报告）？ *</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">A.ui要统一、准确。</span><br><span class="line">B.尽量使用业界惯用的表达术语和表达方法</span><br><span class="line">C.每条缺陷报告只包括一个缺陷</span><br><span class="line">D.不可重现的缺陷也要报告</span><br><span class="line">E.明确指明缺陷类型</span><br><span class="line">F.明确指明缺陷严重等级和优先等级</span><br><span class="line">G.描述 (Description) ，简洁、准确，完整，揭示缺陷实质，记录缺陷或缺陷出现的位置</span><br><span class="line">短行之间使用自动数字序号，使用相同的字体、字号、行间距</span><br><span class="line">短行之间使用自动数字序号，使用相同的字体、字号、行间距，可以保证各条记录格式一致，做到规范专业。</span><br><span class="line">H.每一个步骤尽量只记录一个操作</span><br><span class="line">I.确认步骤完整，准确，简短</span><br><span class="line">J.根据缺陷，可选择是否进行图象捕捉</span><br></pre></td></tr></table></figure>
+
+<h3 id="31-如果回归测试不通过怎么办"><a href="#31-如果回归测试不通过怎么办" class="headerlink" title="31.如果回归测试不通过怎么办?  **"></a>31.如果回归测试不通过怎么办?  **</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">说明未通过的原因,把bug打回去让开发重新修复</span><br></pre></td></tr></table></figure>
+
+<h3 id="32-压力测试-负载测试-稳定性测试"><a href="#32-压力测试-负载测试-稳定性测试" class="headerlink" title="32.压力测试,负载测试,稳定性测试"></a>32.压力测试,负载测试,稳定性测试</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">压力测试: 在强负载下的测试,查看系统在峰值情况下是否有功能隐患,系统是否具有良好的容错能力和可恢复能力</span><br><span class="line">负载测试:通过逐渐增加系统负载,确定在满足系统的性能指标的情况下,找出系统能承受的最大负载和极限负载的测试</span><br><span class="line">稳定性测试:给定一个用户正常的业务负载,然后进行长时间的测试(1天-1周),并最终保证服务器能满足线上业务需求</span><br></pre></td></tr></table></figure>
+
+<h3 id="33-项目迭代周期"><a href="#33-项目迭代周期" class="headerlink" title="33.项目迭代周期 **"></a>33.项目迭代周期 **</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">一般是  2周- 1个月, 这个和新增功能的多少/难易有关</span><br><span class="line">另外 大版本更新的时候(比如1.x.x 升级到 2.0.0) , 所有功能都要重新测试</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="34-团队大小"><a href="#34-团队大小" class="headerlink" title="34.团队大小 **"></a>34.团队大小 **</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">产品经理:1,项目经理:1,ui:2,前端:2,后端:3,Android:2,ios:3,测试:2,</span><br><span class="line"></span><br><span class="line">可以说测试部门有挺多人,派到这个项目组的有2个</span><br><span class="line">自己编,合理就可以了,前端:后端:android:ios:测试 = 接近 1:1</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h3 id="35-sql语句"><a href="#35-sql语句" class="headerlink" title="35.sql语句 ***"></a>35.sql语句 ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br></pre></td><td class="code"><pre><span class="line">-------了解---------</span><br><span class="line">显示数据库：show databases;</span><br><span class="line">数据库创建：create database 数据库名; </span><br><span class="line">数据库切换：use 数据库;</span><br><span class="line">查看当前库的所有表：show tables;</span><br><span class="line">创建表：create table 表名（ 列名 类型, 列名 类型 ）;</span><br><span class="line">查看表结构：desc 表名;</span><br><span class="line">删除表：drop table 表名；</span><br><span class="line">删除库：drop database 库名；</span><br><span class="line"></span><br><span class="line">-----掌握-------</span><br><span class="line">插入数据：insert into 表名 values(); </span><br><span class="line">删除数据：delete from 表名 where 条件;</span><br><span class="line">修改数据：update 表名 set 键=值，键=值 where 条件；（update student set name=’张三’ where name=’zhangsan’； ）</span><br><span class="line"></span><br><span class="line">-----查询  重点掌握-------</span><br><span class="line">查询所有：select * from 表名;</span><br><span class="line">条件查询：select * from 表名 where 条件; </span><br><span class="line">查询所有学生成绩，并输出效果为 姓名 语文 英语 数学： </span><br><span class="line">select name as 姓名,chinese as 语文,english as 英语,math as 数学 from student </span><br><span class="line">查询数学成绩在80-90之间的同学： </span><br><span class="line">select * from student where math between 80 and 90 </span><br><span class="line">查询数学语文英语都大于80的同学成绩 or或者 ，and 并且：</span><br><span class="line">select * from student where math&gt;80 and english&gt;80 and chinese &gt;80; </span><br><span class="line"></span><br><span class="line">模糊查询 ：_代表1个字符 ；%代表0个及其以上的字符</span><br><span class="line">查询所有姓名中包含张的同学：select * from student where name like ‘%张%’ </span><br><span class="line"></span><br><span class="line">升序：asc</span><br><span class="line">select * from 表名 order by 表中的字段 asc(MySQL中默认是升序排列，可不写) ；</span><br><span class="line">降序：desc</span><br><span class="line">select * from 表名 order by 表中的字段 desc ；</span><br><span class="line">（按照数学成绩从大到小查询：select * from student order by math desc;）</span><br><span class="line"></span><br><span class="line">分页查询：limit，</span><br><span class="line">select * from table limit m,n；其中m是指记录从m+1开始,，N代表取n条记录。</span><br><span class="line">取出第3条至第6条，4条记录 ：select * from student limit 2,4 </span><br><span class="line"></span><br><span class="line">分组查询：group by 字段</span><br><span class="line">根据性别分类，查出对应性别的人数（比如，男：20，女：19）：</span><br><span class="line">select sex，count(*) from employee group by sex;</span><br><span class="line">分组查询加条件 ：使用having，不使用where</span><br><span class="line">根据性别，查询大于18岁的人数</span><br><span class="line">select sex，count(*) from employee group by sex having age&gt;18;</span><br><span class="line"></span><br><span class="line">count 个数</span><br><span class="line">sum 总数</span><br><span class="line">avg 平均数</span><br><span class="line">max 最大值</span><br><span class="line">min 最小值</span><br><span class="line">语文的平均成绩：select avg(chinese) from student;</span><br><span class="line">统计一下班级语文最高分和最低分：</span><br><span class="line">select max(chinese) from student;</span><br><span class="line">select min(chinese) from student; </span><br><span class="line">班级里边有多少学生：select count(*)from student; </span><br><span class="line"></span><br><span class="line">子查询：一个查询的结果 作为另一个查询的条件</span><br><span class="line">先查括号里面的，查到kaifa班级的id，根据id去student表查到对应class_id的学生：</span><br><span class="line">select * from student where class_id=(select id from class where name=&quot;kaifa&quot;);</span><br><span class="line"></span><br><span class="line">内连接查询：inner join on 查询两张表，设定条件，将两张表中对应的数据查询出来</span><br><span class="line">select * from customer c inner join 、 o on c.id=o.customer_id; </span><br><span class="line"></span><br><span class="line">左外连接：left join on，将两张表对应的数据查询出来，同时**将左表自己没有关联的数据也查询出来（）</span><br><span class="line">select * from customer c left join orders o on c.id=o.customer_id;</span><br><span class="line"></span><br><span class="line">右外连接：right join on 设定条件，将两张表对应的数据查询出来，同时将右表自己没有关联的所有数据查询出来</span><br><span class="line">select * from customer c right join orders o on c.id=o.customer_id;</span><br><span class="line"></span><br><span class="line">去重：distinct</span><br><span class="line">SELECT distinct 字段1,字段2 FROM 表名</span><br></pre></td></tr></table></figure>
+
+<h3 id="36-常用Linux命令"><a href="#36-常用Linux命令" class="headerlink" title="36.常用Linux命令 ***"></a>36.常用Linux命令 ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">• 目录操作</span><br><span class="line">• cd usr/ 切换到该目录下usr目录</span><br><span class="line">• cd .. 切换到上一层目录</span><br><span class="line">• cd / 切换到系统根目录</span><br><span class="line">• mkdir 目录名称 创建目录 </span><br><span class="line">• ls 目录名称 查询该目录下所有的目录和文件 </span><br><span class="line">• ls [-a] 目录名称 查询该目录下所有的目录和文件,包含隐藏文件 </span><br><span class="line">• ls [-l] 目录名称 查询该目录下所有的目录和文件的详细信息 </span><br><span class="line">• find / -name 目录名称 查找/root下的目录(文件)   ****</span><br><span class="line">• mv 目录名称 新目录名称 修改目录名称</span><br><span class="line">• mv 目录名称 目录的新位置 剪切 </span><br><span class="line">• cp -r 目录名称 目录的目标位置 拷贝   ***</span><br><span class="line">• rm -rf 目录 强制删除目录 </span><br><span class="line"></span><br><span class="line">• 文件操作 </span><br><span class="line">• 创建空文件：touch 文件名称   ***</span><br><span class="line">• 查看文件内容：cat/more/less/tail 文件   ***</span><br><span class="line">• 动态查看/实时查看文件(日志)：tail -f 文件  ***</span><br><span class="line">• 查看文件前10行：head -n 10 文件名   ***</span><br><span class="line">• 查看文件后5行：tail -n 5 文件名    ***</span><br><span class="line">• 关键字搜索 ：grep 要搜索的字符串 要搜索的文件        ***</span><br><span class="line">• 修改文件内容：vi/vim 文件（--&gt;进入文件-----&gt;命令模式------&gt;按i进入编辑模式-----&gt;编辑文件 **-------&gt;按**Esc进入命令模式--输入：进入底行模式-**----&gt;**输入wq/q!）       ***</span><br><span class="line">• 强制删除文件：rm -rf 文件  ***</span><br><span class="line"></span><br><span class="line">• 文件的打包压缩 :tar -zcvf 文件名.tar 要打包的文件        ***</span><br><span class="line">• 文件的解压:tar -xvf 文件名.tar        ***</span><br><span class="line">• 扩充:将文件解压到固定位置 :tar -xvf 文件名.tar -C 指定解压的位置 </span><br><span class="line"></span><br><span class="line">• 查询当前所在位置 : pwd </span><br><span class="line"></span><br><span class="line">• 查看进程: ps -ef | grep 进程名称(tomcat/mysql)         ***</span><br><span class="line">• 杀死进程:kill -9 进程pid         ***</span><br><span class="line">• 查看端口号:netstat -an | grep 端口号(3306)    ***</span><br><span class="line">• 查看服务器ip : ifconfig        ***</span><br><span class="line">• 查看网络是否能正常使用 </span><br><span class="line">• ping 外网地址 查看是否能访问外网 </span><br><span class="line">• ping 内网ip 查看是否能访问内网          ***</span><br><span class="line"></span><br><span class="line">• 权限命令 :chmod 777 文件 赋权          ***</span><br><span class="line"></span><br><span class="line">• 查看cpu :top          ***</span><br><span class="line">• 查看磁盘信息 : df -h          ***</span><br><span class="line">• 查看内存信息: free          ***</span><br><span class="line">• 切换管理员账户：su，然后输入密码</span><br><span class="line">• 由root 切换到test用户：su test</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" title="测试高频面试题-功能测试" target="_blank" rel="external">http://sunjunyu.cn/2022/09/12/高频面试题-功能测试/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="sunjunyu.cn" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/%E5%A4%B4%E5%83%8F.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="sunjunyu.cn" target="_blank"><span class="text-dark">蓝桉</span><small class="ml-1x">欢迎交流与分享经验</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="uyan_frame"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    
+    <li class="next">
+      <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" title="测试高频面试题-性能测试"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Sun-JunYu" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5814038760" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

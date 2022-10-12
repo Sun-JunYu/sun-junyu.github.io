@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>测试高频面试题-自动化测试 | 蓝桉个人博客</title>
+  <meta name="description" content="Python 及自动化基础1.您知道Python中的可变不可变数据类型有哪些？ **12可变数据类型有列表(list)、集合(set)、字典(dict)不可变数据类型有数字(number)、字符串(str)、元祖(tuple)、不可变集合(frozenset)  2.面向对象三要素及其意义吗？********1234567面向对象是相对于面向过程来讲的，面向过程是 所有的事情都得自己去做, 而面向">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试高频面试题-自动化测试">
+<meta property="og:url" content="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:site_name" content="LanAn Blog">
+<meta property="og:description" content="Python 及自动化基础1.您知道Python中的可变不可变数据类型有哪些？ **12可变数据类型有列表(list)、集合(set)、字典(dict)不可变数据类型有数字(number)、字符串(str)、元祖(tuple)、不可变集合(frozenset)  2.面向对象三要素及其意义吗？********1234567面向对象是相对于面向过程来讲的，面向过程是 所有的事情都得自己去做, 而面向">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-12T01:14:03.329Z">
+<meta property="article:author" content="蓝桉">
+<meta property="article:tag" content="高频面试题">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="自动化测试">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="LanAn Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="sunjunyu.cn" target="_blank">
+          <img class="img-circle img-rotate" src="/images/%E5%A4%B4%E5%83%8F.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">蓝桉</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">欢迎交流与分享经验</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> BeiJing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Sun-JunYu" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5814038760" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL%E6%A1%88%E4%BE%8B/">SQL案例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git%E5%91%BD%E4%BB%A4/">git命令</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">接口测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-功能测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-性能测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">测试高频面试题-接口测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">测试高频面试题-自动化测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">软件开发基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/">软件缺陷</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get-post/" rel="tag">get&#x2F;post</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git%E5%91%BD%E4%BB%A4/" rel="tag">git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-https/" rel="tag">http&#x2F;https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" rel="tag">http请求组成</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E6%A1%88%E4%BE%8B/" rel="tag">sql案例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E8%AF%AD%E5%8F%A5/" rel="tag">sql语句</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">功能测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" rel="tag">开发模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" rel="tag">接口测试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" rel="tag">测试分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B/" rel="tag">测试模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%96%B9%E6%B3%95/" rel="tag">测试用例方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/" rel="tag">版本控制工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E6%80%81%E7%A0%81/" rel="tag">状态码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%BA%E9%99%B7%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0/" rel="tag">缺陷产生原因</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%BA%E9%99%B7%E5%88%86%E7%B1%BB/" rel="tag">缺陷分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" rel="tag">网络基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" rel="tag">自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E7%B1%BB/" rel="tag">软件分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" rel="tag">软件开发基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81/" rel="tag">软件开发生态</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" rel="tag">软件测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/" rel="tag">软件缺陷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/" rel="tag">软件质量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">高频面试题</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Charles/" style="font-size: 13px;">Charles</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/SQL/" style="font-size: 13px;">SQL</a> <a href="/tags/get-post/" style="font-size: 13px;">get/post</a> <a href="/tags/git%E5%91%BD%E4%BB%A4/" style="font-size: 13px;">git命令</a> <a href="/tags/http-https/" style="font-size: 13px;">http/https</a> <a href="/tags/http%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" style="font-size: 13px;">http请求组成</a> <a href="/tags/sql%E6%A1%88%E4%BE%8B/" style="font-size: 13px;">sql案例</a> <a href="/tags/sql%E8%AF%AD%E5%8F%A5/" style="font-size: 13px;">sql语句</a> <a href="/tags/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">功能测试</a> <a href="/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">开发模式</a> <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">性能测试</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 13px;">抓包</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" style="font-size: 13.5px;">接口测试</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 14px;">测试</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" style="font-size: 13px;">测试分类</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B/" style="font-size: 13px;">测试模型</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%96%B9%E6%B3%95/" style="font-size: 13px;">测试用例方法</a> <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/" style="font-size: 13px;">版本控制工具</a> <a href="/tags/%E7%8A%B6%E6%80%81%E7%A0%81/" style="font-size: 13px;">状态码</a> <a href="/tags/%E7%BC%BA%E9%99%B7%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0/" style="font-size: 13px;">缺陷产生原因</a> <a href="/tags/%E7%BC%BA%E9%99%B7%E5%88%86%E7%B1%BB/" style="font-size: 13px;">缺陷分类</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">网络基础</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">自动化测试</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E7%B1%BB/" style="font-size: 13px;">软件分类</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">软件开发基础</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81/" style="font-size: 13px;">软件开发生态</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">软件测试</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/" style="font-size: 13px;">软件缺陷</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/" style="font-size: 13px;">软件质量</a> <a href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 14px;">高频面试题</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-功能测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-功能测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-性能测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-性能测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">测试高频面试题-接口测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-接口测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">测试高频面试题-自动化测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-自动化测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/git%E5%91%BD%E4%BB%A4/">git命令</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/08/09/git/" class="title">git命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-08-08T16:00:00.000Z" itemprop="datePublished">2020-08-09</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-高频面试题-自动化测试" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      测试高频面试题-自动化测试
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="article-date">
+	  <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">测试高频面试题-自动化测试</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a>, <a class="article-tag-link-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" rel="tag">自动化测试</a>, <a class="article-tag-link-link" href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">高频面试题</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h2 id="Python-及自动化基础"><a href="#Python-及自动化基础" class="headerlink" title="Python 及自动化基础"></a>Python 及自动化基础</h2><h3 id="1-您知道Python中的可变不可变数据类型有哪些？"><a href="#1-您知道Python中的可变不可变数据类型有哪些？" class="headerlink" title="1.您知道Python中的可变不可变数据类型有哪些？ **"></a>1.您知道Python中的可变不可变数据类型有哪些？ **</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">可变数据类型有列表(list)、集合(set)、字典(dict)</span><br><span class="line">不可变数据类型有数字(number)、字符串(str)、元祖(tuple)、不可变集合(frozenset)</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-面向对象三要素及其意义吗？"><a href="#2-面向对象三要素及其意义吗？" class="headerlink" title="2.面向对象三要素及其意义吗？********"></a>2.面向对象三要素及其意义吗？********</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">面向对象是相对于面向过程来讲的，面向过程是 所有的事情都得自己去做, 而面向对象是把相关的数据和方法组织为一个整体来看待，完成任务只需要找有相关功能的对象即可。</span><br><span class="line">咱们整个世界就是面向对象的世界,比如我想告诉你一个消息,不需要千里迢迢的跑过去亲口对你说,只需要通过电话/微信就可以,电话/微信就是具有通话功能的对象,我只需要会用它就可以,不需要知道它的实现原理</span><br><span class="line"></span><br><span class="line">面向对象三要素是：封装、继承、多态</span><br><span class="line">封装：将有共同的属性和方法封装到同一个类下面，对外只提供访问的的接口,不提提供实现细节</span><br><span class="line">继承：子类继承父类，可以具备父类已有的非私有属性和方法，解决代码重用</span><br><span class="line">多态：多态的前提是继承, 指的是基类的同一个方法在不同的派生类中有着不同的功能,比如猫和狗都继承动物类,但是猫爱好吃鱼,狗爱好吃骨头,这就是多态</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-列举Python的魔法方法"><a href="#3-列举Python的魔法方法" class="headerlink" title="3.列举Python的魔法方法 *"></a>3.列举Python的魔法方法 *</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">主要魔法方法</span><br><span class="line">__new__：类的构造器，创建初始化后的基本实例对象，相当于是类的骨架子</span><br><span class="line">__init__：类的数据初始化方法，用来给实例话对象添加属性的</span><br><span class="line">__del__：类的析枸器(这是C/C++的叫法)，专门用来在实例销毁前调用，释放资源的</span><br><span class="line">__call__：可以将实例对象直接声明为一个方法调用，方便调用过程，保护内部实现</span><br><span class="line"></span><br><span class="line">相关属性获取方法</span><br><span class="line">__getattr__：获取某个属性时，比如对于字典的key值获取或者列表的索引获取</span><br><span class="line">__setattr__：设置某个属性时，比如设置某个索引对应的值，或者字典对应key的value更新创建</span><br><span class="line"></span><br><span class="line">比较操作符</span><br><span class="line">__lt__、__le__：小于判断、小于等于</span><br><span class="line">__eq__、__ne__：等于、不等于判断时，用的就是这个方法</span><br><span class="line">__gt__、__ge__：大于判断、大于等于判断</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-列表，元组，字典区别"><a href="#4-列表，元组，字典区别" class="headerlink" title="4.列表，元组，字典区别 ***"></a>4.列表，元组，字典区别 ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">python中3种内建的数据结构:列表、元组和字典</span><br><span class="line">列表：[]表示，可变的数据类型，即这种类型是可以被改变的，并且列表是可以嵌套的</span><br><span class="line">元组：（）表示，元组是不可变的，可以嵌套</span><br><span class="line">字典：&#123;&#125;表示，存储键值对的，键要求唯一，字典中的键/值对是没有顺序的</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-unittest怎么使用"><a href="#5-unittest怎么使用" class="headerlink" title="5.unittest怎么使用"></a>5.unittest怎么使用</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1.写一个py文件，导入unittest</span><br><span class="line">2.写一个类，继承unittest.TestCase</span><br><span class="line">3.复写setup（准备测试环境），teardown（还原测试环境），写以test打头的方法，里面可以通过断言去验证一些逻辑</span><br><span class="line">4.另一个py文件中，使用测试套件（TestSuite），把想要执行的用例添加进来</span><br><span class="line">5.使用TextTestRunner/HtmlTestRunner，运行测试套件</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-怎样导包"><a href="#6-怎样导包" class="headerlink" title="6.怎样导包"></a>6.怎样导包</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.建议在条件允许的情况下，使用绝对路径导入，而不是相对路径。</span><br><span class="line">	比如有两个包，w/a/c.py,在f包下有个g.py,想要在g.py中使用c.py,可以这么导包 import w.a.c 或者 from w.a import c</span><br><span class="line">2.系统的模块，像time，os，还有自己下载的模块，比如requests，在sys.path（sys.path是python的搜索模块的路径集）中是有路径的，所以可以直接import</span><br><span class="line">3.如果想把另一个模块中的py文件导入当前项目，可以将另一个模块的路径添加到sys.path中，然后导包，比如，在C:\\tool\\myTool\\calc.py,可以这样导包</span><br><span class="line">import sys</span><br><span class="line">sys.path.append(“C:\\tool\\myTool\\”)</span><br><span class="line">import calc</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-八大定位"><a href="#7-八大定位" class="headerlink" title="7. 八大定位 ***"></a>7. 八大定位 ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">id：</span><br><span class="line">className：</span><br><span class="line">name：</span><br><span class="line">tagName：</span><br><span class="line">xpath：</span><br><span class="line">css选择器：</span><br><span class="line">link_text:</span><br><span class="line">partial_link_text:</span><br><span class="line"></span><br><span class="line">使用的api是</span><br><span class="line">find_element(by,value)</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-常用的selenium-api方法及作用"><a href="#8-常用的selenium-api方法及作用" class="headerlink" title="8.常用的selenium api方法及作用*"></a>8.常用的selenium api方法及作用*</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">FixFox/Chrome（）：获取浏览器驱动</span><br><span class="line">get（）：请求某个网址</span><br><span class="line">find_element():查找元素</span><br><span class="line">send_keys():给文本框输入内容</span><br><span class="line">click（）：点击</span><br><span class="line">move_to_element()（ActionsChain中的方法）: 把鼠标移动到元素上</span><br><span class="line">driver.execute_script(&#x27;window.scrollTo(0,0)&#x27;):执行js代码 (这个是滑动到顶部)</span><br><span class="line">element.get_attribute(属性的键)：获取属性的值</span><br><span class="line">quite（）：退出浏览器</span><br><span class="line">close（）：关闭当前窗口</span><br><span class="line">switch_to.frame():切换frame</span><br><span class="line">switch_to.window:切换window</span><br><span class="line">clear():清楚输入框内容</span><br><span class="line">text:获取文本</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-selenium如何切换窗口-x2F-frame-x2F-警告框"><a href="#9-selenium如何切换窗口-x2F-frame-x2F-警告框" class="headerlink" title="9.selenium如何切换窗口&#x2F;frame&#x2F;警告框"></a>9.selenium如何切换窗口&#x2F;frame&#x2F;警告框</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">获取当前窗口的句柄： handles = driver.window_handlers</span><br><span class="line">切换窗口：driver.switch_to.window(handles[n])</span><br><span class="line">切换frame：driver.switch_to.frame(value)</span><br><span class="line">切换alert：driver.switch_to.alert</span><br></pre></td></tr></table></figure>
+
+<h3 id="10-常用的python模块"><a href="#10-常用的python模块" class="headerlink" title="10.常用的python模块*"></a>10.常用的python模块*</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">单元测试模块：unittest，pytest</span><br><span class="line">ui自动化模块：selenium，appium</span><br><span class="line">时间模块：time</span><br><span class="line">数学计算模块：math</span><br><span class="line">执行系统命令模块：os</span><br><span class="line">随机数模块：random</span><br><span class="line">mysql数据库：pymsql</span><br><span class="line">string模块：str</span><br><span class="line">网络请求:requests</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-浏览器等待的三种方式"><a href="#11-浏览器等待的三种方式" class="headerlink" title="11.浏览器等待的三种方式*"></a>11.浏览器等待的三种方式*</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">固定等待：time.sleep(seconds)</span><br><span class="line">显示等待：WebDriverWait（）</span><br><span class="line">隐式等待：driver.implicitly_wait()</span><br></pre></td></tr></table></figure>
+
+<h3 id="12-什么是po模型及它的优点"><a href="#12-什么是po模型及它的优点" class="headerlink" title="12.什么是po模型及它的优点"></a>12.什么是po模型及它的优点</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">PageObject，将页面的元素定位和元素行为封装成一个basepage类，其他page继承basepage，一个页面对应一个类</span><br><span class="line">PageObject 设计模式核心思想是：测试对象（页面）和测试用例（页面操作+测试数据）分离；调用所需页面对象中的行为，组成测试用例。在用例中，是看不到元素定位和元素操作的。</span><br><span class="line">优点：</span><br><span class="line">1. PO提供了一种业务流程与页面元素操作分离的模式，这使得测试代码变得更加清晰</span><br><span class="line">2. 页面对象与用例分离，使得我们更好的复用对象</span><br><span class="line">3. 可复用的页面方法代码会变得更加优化</span><br><span class="line">4. 更加有效的命令方式使得我们更加清晰的知道方法所操作的UI元素</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-PO模型的核心要素"><a href="#13-PO模型的核心要素" class="headerlink" title="13.PO模型的核心要素"></a>13.PO模型的核心要素</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. 在PO模式中抽离封装一个BasePage类，该基类应该拥有一个webdriver实例的属性</span><br><span class="line">2. 每一个page都继承BasePage，通过driver来管理本page中元素，将page中的操作封装成一个个方法</span><br><span class="line">3. TestCase继承unittest.Testcase类，并依赖page类，从而实现相应的测试步骤</span><br></pre></td></tr></table></figure>
+
+<h3 id="14-pymysql"><a href="#14-pymysql" class="headerlink" title="14.pymysql  **"></a>14.pymysql  **</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">import pymysql</span><br><span class="line"># 连接数据库</span><br><span class="line">con =pymysql.connect(host=&quot;127.0.0.1&quot;,</span><br><span class="line">                user=&quot;root&quot;,</span><br><span class="line">                password=&quot;123456&quot;,</span><br><span class="line">                database=&quot;h2106&quot;,</span><br><span class="line">                port=3306)</span><br><span class="line"># 拿到游标 ，查询结果是列表嵌套 字典</span><br><span class="line">cursor = con.cursor(cursor=pymysql.cursors.DictCursor)</span><br><span class="line">sql = &quot;select * from stu;&quot;</span><br><span class="line"># 执行sql语句</span><br><span class="line">cursor.execute(sql)</span><br><span class="line"># 拿到结果</span><br><span class="line">data = cursor.fetchall()</span><br><span class="line">print(data)</span><br><span class="line"></span><br><span class="line"># 关闭游标</span><br><span class="line">cursor.close()</span><br><span class="line"># 关闭数据库</span><br><span class="line">con.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">1.连接数据库的方法</span><br><span class="line">	connect()</span><br><span class="line">2.连接数据库需要的参数</span><br><span class="line">	host(主机ip),port(端口号),user(用户名),password(密码),database(数据库名)</span><br><span class="line">3.执行sql语句</span><br><span class="line">	cursor.execute(sql语句)</span><br><span class="line">4.拿到数据</span><br><span class="line">	cursor.fetchall()</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="ADB"><a href="#ADB" class="headerlink" title="ADB"></a>ADB</h2><h3 id="1-说一下adb"><a href="#1-说一下adb" class="headerlink" title="1.说一下adb **"></a>1.说一下adb **</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">adb 是Android debug bridge（安卓调试桥），是sdk提供一个工具，可以操作管理app+设备</span><br><span class="line"></span><br><span class="line">查看手机cpu情况：adb shell dumpsys cpuinfo</span><br><span class="line">应用的内存使用情况：adb shell dumpsys meminfo +包名</span><br><span class="line">查看电池状态:adb shell dumpsys battery</span><br><span class="line"></span><br><span class="line">安装软件：adb install -r  (APK路径)</span><br><span class="line">卸载软件：adb uninstall com.forgetsky.wanandroid</span><br><span class="line">将手机日志输出到本地文件中：adb logcat -v time process &gt; C:/log/aa.txt</span><br><span class="line">开启服务：adb start-server</span><br><span class="line">关闭服务：adb kill-server</span><br><span class="line"></span><br><span class="line">查看设备：adb devices</span><br><span class="line">将电脑文件传输到移动端：adb push 电脑路径 移动端路径</span><br><span class="line">adb push C:\log\aa.txt /storage/emulated/0</span><br><span class="line">将移动端文件传输到电脑：adb pull 移动端路径 电脑路径</span><br><span class="line">adb pull /storage/emulated/0/博雅东湖.mp4 C:\log\bo.mp4</span><br><span class="line">列出手机装的所有app的包名：adb shell pm list packages</span><br><span class="line">清除应用缓存信息:adb shell pm clear [packagename]</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-monkey测试-为什么叫monkey"><a href="#2-monkey测试-为什么叫monkey" class="headerlink" title="2.monkey测试(为什么叫monkey) ***"></a>2.monkey测试(为什么叫monkey) ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">monkey 是adb下的一个子命令，可以在Android手机屏幕上产生随机的触摸事件，可以对Android app进行压测</span><br><span class="line"></span><br><span class="line">adb shell monkey -p 包名 -s 6009 --throttle 300 --ignore-crashes --ignore-timeouts --pct-touch 90 -v 300000 &gt;C:\log\log.txt</span><br><span class="line"></span><br><span class="line">-p 包名      ----******</span><br><span class="line">-s 6009: 指定种子，值相同，产生的事件序列也相同  ----******</span><br><span class="line">--throttle &lt;毫秒&gt; ： 指定用户操作（即事件）间的间隔   ----******</span><br><span class="line">--ignore-crashes：忽略崩溃   -----*****</span><br><span class="line">--ignore-timeouts：忽略超时，（ANR）   -----*****</span><br><span class="line">--pct-touch 设置点击事件百分比  -----*****</span><br><span class="line">--pct-motion 设置滑动事件百分比  -----*****</span><br><span class="line">-v,-v-v,-v-v-v: 日志详细程度</span><br><span class="line">300000： 产生的事件个数（一般都是10w+的次数）</span><br><span class="line">&gt;C:\log\log.txt ： 日志输出的位置</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">时间：3-5H</span><br><span class="line">晚上下班 的时候，运行，等到 早上上班 结束了，分析</span><br><span class="line"></span><br><span class="line">测试结果处理:</span><br><span class="line">1.把日志存到电脑上</span><br><span class="line">2.查找异常信息			    				        </span><br><span class="line">	a.XXXException(NUllPointerException,</span><br><span class="line">		ArrayIndexOutOfBoundsException,FileNotFoundException...)</span><br><span class="line">	b.ForceClosed(程序强制关闭) （ctrl+f搜索‘Fatal’）</span><br><span class="line">	c.ApplicationNot Response(应用程序无响应)(搜索anr)</span><br><span class="line">	d.out of memory (内存溢出)</span><br><span class="line">	</span><br><span class="line">3.把搜到的异常信息整理一下，发给开发（把异常那行及下面10几行）</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="接口自动化"><a href="#接口自动化" class="headerlink" title="接口自动化"></a>接口自动化</h2><h3 id="1-说说你接口自动化是怎么做的"><a href="#1-说说你接口自动化是怎么做的" class="headerlink" title="1.说说你接口自动化是怎么做的"></a>1.说说你接口自动化是怎么做的</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1.找后端拿到接口文档</span><br><span class="line">2.分析接口（接口间业务关系，关联接口的数据，请求参数，请求头(token，os，版本),响应数据（数据格式，字段，错误分析））</span><br><span class="line">3.写接口测试用例</span><br><span class="line">4.把测试数据放入csv文件</span><br><span class="line">5.在unittest的testcase类中（写一个类，继承unittest.TestCase），写test打头的方法，把csv读取的测试数据放入requests做网络请求，然后把拿到的响应数据断言判断，或者使用pymysql连接数据库查询数据并比对</span><br><span class="line">6.在另一个py文件中使用TestSuite调用TestCase中的方法，配合HtmlTestRunner 生成测试报告</span><br><span class="line">7.将报告以邮件的形式发送给自己和领导</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-自动化的细节"><a href="#2-自动化的细节" class="headerlink" title="2.自动化的细节 ***"></a>2.自动化的细节 ***</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">response = request.get()/post()</span><br><span class="line"># 1.响应码</span><br><span class="line">response.status_code</span><br><span class="line"># 2.响应json数据</span><br><span class="line">response.json()</span><br><span class="line"># 3.字符串格式的json 转换为json/字典</span><br><span class="line">json = eval(字符串)</span><br><span class="line"># 4.json/字典转换为字符串</span><br><span class="line">str1 = str（字典/json）</span><br></pre></td></tr></table></figure>
+
+<h2 id="UI自动化"><a href="#UI自动化" class="headerlink" title="UI自动化"></a>UI自动化</h2><h3 id="1-介绍一下你对项目中哪些功能做了自动化，怎么做得"><a href="#1-介绍一下你对项目中哪些功能做了自动化，怎么做得" class="headerlink" title="1.介绍一下你对项目中哪些功能做了自动化，怎么做得"></a>1.介绍一下你对项目中哪些功能做了自动化，怎么做得</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">我们做自动化的话，一般需要选取那种比较固定的功能，比如搜索，登录，注册等，这些功能在我们迭代的时候一直存在，所以选这些功能。</span><br><span class="line">自动化说白了就是将手动测试的步骤全部转换成代码，由代码完成对应的操作，比如人可以通过眼睛看到按钮/输入框的位置，代码不行，需要通过元素定位的方式找到按钮/输入框，代码也没有手，点击也是得通过click方法完成，还有其他的像输入框输入内容，需要调用send_keys（）</span><br><span class="line">我的脚本使用了PO模型，将元素操作和业务进行了分离，元素操作封装成了BasePage，具体的业务的写入了具体的业务类，比如SearchPage，LoginPage，LocatePage，验证是通过unittest验证的</span><br><span class="line"></span><br><span class="line">(下面是举例,拿自己的项目业务举例)</span><br><span class="line">说一下我写过的搜索功能（拿简书举例）吧，配置浏览器和url信息后，脚本会帮我们启动对应的浏览器，chrome或者火狐等，</span><br><span class="line">进入主页面后通过id定位到搜索输入框（可以xpath定位，id定位，class定位...），调用send_keys()输入想要搜索的内容，</span><br><span class="line">通过xpath定位到搜索按钮，代码调用点击click()方法，结果会在新的窗口展示</span><br><span class="line">通过driver.switch_to.window(handles[n])切换窗口，</span><br><span class="line">搜索结果上面部分是用户，下面部分是文章，我们需要验证用户和文章 是和我们搜索关键字相匹配的</span><br><span class="line">验证用户很简单，通过class把所有用户的元素获取到，然后获取用户名（元素.text），然后通过断言判断用户名是否包含搜索关键字</span><br><span class="line">验证文章的话我们需要验证文章的作者，标题，文章的内容，只要有三者有一个包含关键字，那结果就是正确的，同样我们获取作者，标题，文章内容的文本，断言判断文本中是否包含搜索关键字（怎么判断，find）	</span><br></pre></td></tr></table></figure>
+
+<h2 id="git"><a href="#git" class="headerlink" title="git"></a>git</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">git和svn都是是项目版本控制的工具, 可以跟踪项目各个文件的变化</span><br><span class="line">svn是集中式的版本控制工具,git是分布式的</span><br><span class="line"></span><br><span class="line">用户配置</span><br><span class="line">git config --global user.name &quot;用户名&quot;</span><br><span class="line">git config --global user.email &quot;邮箱&quot;</span><br><span class="line"></span><br><span class="line">初始化仓库</span><br><span class="line">git init </span><br><span class="line">克隆仓库</span><br><span class="line">git clone 仓库地址</span><br><span class="line"></span><br><span class="line">添加所有文件</span><br><span class="line">git add --all</span><br><span class="line">从暂存区提交 -m：注释</span><br><span class="line">git commit -m &#x27;注释内容&#x27;</span><br><span class="line">拉取远端内容</span><br><span class="line">git pull </span><br><span class="line">将本地历史推送到远程</span><br><span class="line">git push </span><br><span class="line"></span><br><span class="line">创建一个分支</span><br><span class="line">git branch 分支名称</span><br><span class="line">删除一个分支</span><br><span class="line">git branch -d 分支名称</span><br><span class="line">切换分支</span><br><span class="line">git checkout 分支名称</span><br><span class="line">合并分支</span><br><span class="line">git merge</span><br><span class="line"></span><br><span class="line">将当前分支回退到历史某个版本</span><br><span class="line">git reset   </span><br><span class="line">查看提交历史记录</span><br><span class="line">git log</span><br><span class="line">对状态的跟踪</span><br><span class="line">git status</span><br><span class="line"></span><br><span class="line">.gitignore忽略文件: 不想被跟踪的文件可以配置到这里</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" title="测试高频面试题-自动化测试" target="_blank" rel="external">http://sunjunyu.cn/2022/09/12/高频面试题-自动化测试/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="sunjunyu.cn" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/%E5%A4%B4%E5%83%8F.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="sunjunyu.cn" target="_blank"><span class="text-dark">蓝桉</span><small class="ml-1x">欢迎交流与分享经验</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="uyan_frame"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" title="测试高频面试题-接口测试"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2020/08/09/git/" title="git命令"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Sun-JunYu" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5814038760" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

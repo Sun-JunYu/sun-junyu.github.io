@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang=zh>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-transform" />
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection" content="telephone=no,email=no,adress=no">
+  <!-- Color theme for statusbar -->
+  <meta name="theme-color" content="#000000" />
+  <!-- 强制页面在当前窗口以独立页面显示,防止别人在框架里调用页面 -->
+  <meta http-equiv="window-target" content="_top" />
+  
+  
+  <title>测试高频面试题-性能测试 | 蓝桉个人博客</title>
+  <meta name="description" content="1.Jmeter做分布式压测的配置1234567压力机: 	在Jmeter bin&#x2F;jmeter.properties中修改server.rmi.ssl.disable&#x3D;false，改为true	启动jmeter-server控制机:	bin&#x2F;jmeter.properties 中修改server.rmi.ssl.disable&#x3D;false，改为true	bin&#x2F;jmeter.properties">
+<meta property="og:type" content="article">
+<meta property="og:title" content="测试高频面试题-性能测试">
+<meta property="og:url" content="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/index.html">
+<meta property="og:site_name" content="LanAn Blog">
+<meta property="og:description" content="1.Jmeter做分布式压测的配置1234567压力机: 	在Jmeter bin&#x2F;jmeter.properties中修改server.rmi.ssl.disable&#x3D;false，改为true	启动jmeter-server控制机:	bin&#x2F;jmeter.properties 中修改server.rmi.ssl.disable&#x3D;false，改为true	bin&#x2F;jmeter.properties">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-09-11T16:00:00.000Z">
+<meta property="article:modified_time" content="2022-10-12T01:14:21.642Z">
+<meta property="article:author" content="蓝桉">
+<meta property="article:tag" content="高频面试题">
+<meta property="article:tag" content="测试">
+<meta property="article:tag" content="性能测试">
+<meta name="twitter:card" content="summary">
+  <!-- Canonical links -->
+  <link rel="canonical" href="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/index.html">
+  
+    <link rel="alternate" href="/atom.xml" title="LanAn Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png" type="image/x-icon">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+  
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body class="main-center" itemscope itemtype="http://schema.org/WebPage">
+  <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+  <div class="slimContent">
+    <div class="navbar-header">
+      
+      
+      <div class="profile-block text-center">
+        <a id="avatar" href="sunjunyu.cn" target="_blank">
+          <img class="img-circle img-rotate" src="/images/%E5%A4%B4%E5%83%8F.jpg" width="200" height="200">
+        </a>
+        <h2 id="name" class="hidden-xs hidden-sm">蓝桉</h2>
+        <h3 id="title" class="hidden-xs hidden-sm hidden-md">欢迎交流与分享经验</h3>
+        <small id="location" class="text-muted hidden-xs hidden-sm"><i class="icon icon-map-marker"></i> BeiJing, China</small>
+      </div>
+      
+      <div class="search" id="search-form-wrap">
+
+    <form class="search-form sidebar-form">
+        <div class="input-group">
+            <input type="text" class="search-form-input form-control" placeholder="搜索" />
+            <span class="input-group-btn">
+                <button type="submit" class="search-form-submit btn btn-flat" onclick="return false;"><i class="icon icon-search"></i></button>
+            </span>
+        </div>
+    </form>
+    <div class="ins-search">
+  <div class="ins-search-mask"></div>
+  <div class="ins-search-container">
+    <div class="ins-input-wrapper">
+      <input type="text" class="ins-search-input" placeholder="想要查找什么..." x-webkit-speech />
+      <button type="button" class="close ins-close ins-selectable" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+    </div>
+    <div class="ins-section-wrapper">
+      <div class="ins-section-container"></div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+      <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target="#main-navbar" aria-controls="main-navbar" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <nav id="main-navbar" class="collapse navbar-collapse" itemscope itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+      <ul class="nav navbar-nav main-nav ">
+        
+        
+        <li class="menu-item menu-item-home">
+          <a href="/.">
+            
+            <i class="icon icon-home-fill"></i>
+            
+            <span class="menu-title">首页</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives">
+            
+            <i class="icon icon-archives-fill"></i>
+            
+            <span class="menu-title">归档</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories">
+            
+            <i class="icon icon-folder"></i>
+            
+            <span class="menu-title">分类</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags">
+            
+            <i class="icon icon-tags"></i>
+            
+            <span class="menu-title">标签</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-links">
+          <a href="/links">
+            
+            <i class="icon icon-friendship"></i>
+            
+            <span class="menu-title">友链</span>
+          </a>
+        </li>
+        
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about">
+            
+            <i class="icon icon-cup-fill"></i>
+            
+            <span class="menu-title">关于</span>
+          </a>
+        </li>
+        
+      </ul>
+      
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Sun-JunYu" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5814038760" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    </nav>
+  </div>
+</header>
+
+  
+    <aside class="sidebar" itemscope itemtype="http://schema.org/WPSideBar">
+  <div class="slimContent">
+    
+      <div class="widget">
+    <h3 class="widget-title">公告</h3>
+    <div class="widget-body">
+        <div id="board">
+            <div class="content">
+                <p>欢迎交流与分享经验!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget-body">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Linux/">Linux</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL/">SQL</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/SQL%E6%A1%88%E4%BE%8B/">SQL案例</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/git%E5%91%BD%E4%BB%A4/">git命令</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">接口测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-功能测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-性能测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">测试高频面试题-接口测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">测试高频面试题-自动化测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/">网络基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/">软件开发基础</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/">软件测试</a><span class="category-list-count">1</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/">软件缺陷</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget-body">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Charles/" rel="tag">Charles</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/SQL/" rel="tag">SQL</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/get-post/" rel="tag">get&#x2F;post</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git%E5%91%BD%E4%BB%A4/" rel="tag">git命令</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http-https/" rel="tag">http&#x2F;https</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" rel="tag">http请求组成</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E6%A1%88%E4%BE%8B/" rel="tag">sql案例</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/sql%E8%AF%AD%E5%8F%A5/" rel="tag">sql语句</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">功能测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" rel="tag">开发模式</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%93%E5%8C%85/" rel="tag">抓包</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" rel="tag">接口测试</a><span class="tag-list-count">2</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a><span class="tag-list-count">4</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" rel="tag">测试分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B/" rel="tag">测试模型</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%96%B9%E6%B3%95/" rel="tag">测试用例方法</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/" rel="tag">版本控制工具</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%8A%B6%E6%80%81%E7%A0%81/" rel="tag">状态码</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%BA%E9%99%B7%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0/" rel="tag">缺陷产生原因</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BC%BA%E9%99%B7%E5%88%86%E7%B1%BB/" rel="tag">缺陷分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" rel="tag">网络基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" rel="tag">自动化测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E7%B1%BB/" rel="tag">软件分类</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" rel="tag">软件开发基础</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81/" rel="tag">软件开发生态</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" rel="tag">软件测试</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/" rel="tag">软件缺陷</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/" rel="tag">软件质量</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">高频面试题</a><span class="tag-list-count">4</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget-body tagcloud">
+      <a href="/tags/Charles/" style="font-size: 13px;">Charles</a> <a href="/tags/Linux/" style="font-size: 13px;">Linux</a> <a href="/tags/SQL/" style="font-size: 13px;">SQL</a> <a href="/tags/get-post/" style="font-size: 13px;">get/post</a> <a href="/tags/git%E5%91%BD%E4%BB%A4/" style="font-size: 13px;">git命令</a> <a href="/tags/http-https/" style="font-size: 13px;">http/https</a> <a href="/tags/http%E8%AF%B7%E6%B1%82%E7%BB%84%E6%88%90/" style="font-size: 13px;">http请求组成</a> <a href="/tags/sql%E6%A1%88%E4%BE%8B/" style="font-size: 13px;">sql案例</a> <a href="/tags/sql%E8%AF%AD%E5%8F%A5/" style="font-size: 13px;">sql语句</a> <a href="/tags/%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">功能测试</a> <a href="/tags/%E5%BC%80%E5%8F%91%E6%A8%A1%E5%BC%8F/" style="font-size: 13px;">开发模式</a> <a href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">性能测试</a> <a href="/tags/%E6%8A%93%E5%8C%85/" style="font-size: 13px;">抓包</a> <a href="/tags/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" style="font-size: 13.5px;">接口测试</a> <a href="/tags/%E6%B5%8B%E8%AF%95/" style="font-size: 14px;">测试</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E5%88%86%E7%B1%BB/" style="font-size: 13px;">测试分类</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E6%A8%A1%E5%9E%8B/" style="font-size: 13px;">测试模型</a> <a href="/tags/%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E6%96%B9%E6%B3%95/" style="font-size: 13px;">测试用例方法</a> <a href="/tags/%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E5%B7%A5%E5%85%B7/" style="font-size: 13px;">版本控制工具</a> <a href="/tags/%E7%8A%B6%E6%80%81%E7%A0%81/" style="font-size: 13px;">状态码</a> <a href="/tags/%E7%BC%BA%E9%99%B7%E4%BA%A7%E7%94%9F%E5%8E%9F%E5%9B%A0/" style="font-size: 13px;">缺陷产生原因</a> <a href="/tags/%E7%BC%BA%E9%99%B7%E5%88%86%E7%B1%BB/" style="font-size: 13px;">缺陷分类</a> <a href="/tags/%E7%BD%91%E7%BB%9C%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">网络基础</a> <a href="/tags/%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">自动化测试</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%88%86%E7%B1%BB/" style="font-size: 13px;">软件分类</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E5%9F%BA%E7%A1%80/" style="font-size: 13px;">软件开发基础</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E5%BC%80%E5%8F%91%E7%94%9F%E6%80%81/" style="font-size: 13px;">软件开发生态</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%B5%8B%E8%AF%95/" style="font-size: 13px;">软件测试</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E7%BC%BA%E9%99%B7/" style="font-size: 13px;">软件缺陷</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E8%B4%A8%E9%87%8F/" style="font-size: 13px;">软件质量</a> <a href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" style="font-size: 14px;">高频面试题</a>
+    </div>
+  </div>
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget-body">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2022/09/">九月 2022</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/08/">八月 2020</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/07/">七月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/06/">六月 2020</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/05/">五月 2020</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+
+    
+      
+  <div class="widget">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget-body">
+      <ul class="recent-post-list list-unstyled no-thumbnail">
+        
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-功能测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-功能测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-性能测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-性能测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/">测试高频面试题-接口测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-接口测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/">测试高频面试题-自动化测试</a>
+              </p>
+              <p class="item-title">
+                <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E8%87%AA%E5%8A%A8%E5%8C%96%E6%B5%8B%E8%AF%95/" class="title">测试高频面试题-自动化测试</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+              </p>
+            </div>
+          </li>
+          
+          <li>
+            
+            <div class="item-inner">
+              <p class="item-category">
+                <a class="category-link" href="/categories/git%E5%91%BD%E4%BB%A4/">git命令</a>
+              </p>
+              <p class="item-title">
+                <a href="/2020/08/09/git/" class="title">git命令</a>
+              </p>
+              <p class="item-date">
+                <time datetime="2020-08-08T16:00:00.000Z" itemprop="datePublished">2020-08-09</time>
+              </p>
+            </div>
+          </li>
+          
+      </ul>
+    </div>
+  </div>
+  
+
+    
+  </div>
+</aside>
+
+  
+  
+<main class="main" role="main">
+  <div class="content">
+  <article id="post-高频面试题-性能测试" class="article article-type-post" itemscope itemtype="http://schema.org/BlogPosting">
+    
+    <div class="article-header">
+      
+        
+  
+    <h1 class="article-title" itemprop="name">
+      测试高频面试题-性能测试
+    </h1>
+  
+
+      
+      <div class="article-meta">
+        <span class="article-date">
+    <i class="icon icon-calendar-check"></i>
+	<a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" class="article-date">
+	  <time datetime="2022-09-11T16:00:00.000Z" itemprop="datePublished">2022-09-12</time>
+	</a>
+</span>
+        
+  <span class="article-category">
+    <i class="icon icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E6%B5%8B%E8%AF%95%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/">测试高频面试题-性能测试</a>
+  </span>
+
+        
+  <span class="article-tag">
+    <i class="icon icon-tags"></i>
+	<a class="article-tag-link-link" href="/tags/%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" rel="tag">性能测试</a>, <a class="article-tag-link-link" href="/tags/%E6%B5%8B%E8%AF%95/" rel="tag">测试</a>, <a class="article-tag-link-link" href="/tags/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98/" rel="tag">高频面试题</a>
+  </span>
+
+
+        
+
+        <span class="post-comment"><i class="icon icon-comment"></i> <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/#comments" class="article-comment-link">评论</a></span>
+        
+      </div>
+    </div>
+    <div class="article-entry marked-body" itemprop="articleBody">
+      
+        <h4 id="1-Jmeter做分布式压测的配置"><a href="#1-Jmeter做分布式压测的配置" class="headerlink" title="1.Jmeter做分布式压测的配置"></a>1.Jmeter做分布式压测的配置</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">压力机: </span><br><span class="line">	在Jmeter bin/jmeter.properties中修改server.rmi.ssl.disable=false，改为true</span><br><span class="line">	启动jmeter-server</span><br><span class="line">控制机:</span><br><span class="line">	bin/jmeter.properties 中修改server.rmi.ssl.disable=false，改为true</span><br><span class="line">	bin/jmeter.properties 中remote_hosts填入压力机的ip和端口号,多个使用&quot;,&quot;隔开</span><br><span class="line">	点击运行–&gt;远程启动</span><br></pre></td></tr></table></figure>
+
+<h4 id="2-性能测试怎么做的？"><a href="#2-性能测试怎么做的？" class="headerlink" title="2.性能测试怎么做的？***"></a>2.性能测试怎么做的？***</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">1.做性能需求分析，挑选了用户使用最频繁/核心功能的接口来做性能测试，比如：首页列表，搜索，提交订单等</span><br><span class="line">2.确定性能指标，比如：事务通过率为99.99%，90%的事务响应时间不超过3秒，错误率为0.01%，CPU和内存的使用率为80%以下，TPS。</span><br><span class="line">3.搭建性能测试环境，准备好性能测试数据。</span><br><span class="line">4.使用Jmeter开发脚本，包括:参数化，断言，关联,监听器等。</span><br><span class="line">5.设计性能测试场景，使用了分布式压测,我们这个项目做了50并发用户的单功能循环30min的基准测试，然后逐渐增加并发用户数（150/300/500...），执行1-2小时的负载测试，看系统有没有性能瓶颈；</span><br><span class="line">6.分析性能测试结果，如果有性能瓶颈，收集相关的日志提单给开发做性能调优。</span><br><span class="line">7.开发调优后，回归性能测试(可能需要来回优化回归多次)</span><br><span class="line">8.测出最大负载后 做稳定性测试（1天-7天）</span><br><span class="line">9.完成后输出负载测试和稳定性测试报告</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">怎么操作(不用背,有可能问细节的时候说)：</span><br><span class="line">1.服务器需要启动ServerAgent</span><br><span class="line">2.添加两个组件（ServerAgent组件，TPS）+监听器（聚合报告）+ 断言+关联</span><br><span class="line">3.线程数量（并发用户量），循环次数永久+调度器(设置持续时间)</span><br><span class="line">4.结果分析，整理报告</span><br></pre></td></tr></table></figure>
+
+<h4 id="3-怎样分析性能测试结果？"><a href="#3-怎样分析性能测试结果？" class="headerlink" title="3.怎样分析性能测试结果？ *"></a>3.怎样分析性能测试结果？ *</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1.查看聚合报告和服务器的资源使用图，检查响应时间，事务成功率，CPU，内存和IO使用率是否达到要求，如果出错率达到了总请求数的0.01%，我们会检查是什么原因导致的，修改好后，重新测试；</span><br><span class="line">2.如果出现了性能瓶颈，比如响应时间，或者CPU使用率不达标，我们会从服务器上导出日志，分析是哪个地方导致响应时间过长，如果分析不出来，就叫上开发一起讨论，确定问题后，就提单给开发修复，修复好了就进行回归测试。</span><br><span class="line"></span><br><span class="line">任何指标只要一小段时间不达标,都需要分析优化,比如cpu/内存 持续3分钟超过80%</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-性能测试关注的指标"><a href="#4-性能测试关注的指标" class="headerlink" title="4.性能测试关注的指标 ***"></a>4.性能测试关注的指标 ***</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">响应时间，并发用户数，吞吐量，TPS，错误率，资源使用率（CPU，内存，磁盘IO，网络）</span><br><span class="line"></span><br><span class="line">TPS和QPS区别：</span><br><span class="line">QPS：服务器每秒处理的请求数量</span><br><span class="line">TPS：服务器每秒处理的事务数量，1个事务包含1个或者多个请求</span><br></pre></td></tr></table></figure>
+
+<h4 id="5-你们项目最佳的并发用户数是多少？"><a href="#5-你们项目最佳的并发用户数是多少？" class="headerlink" title="5.你们项目最佳的并发用户数是多少？*"></a>5.你们项目最佳的并发用户数是多少？*</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们当时做到1500（500-1500）个并发用户的时候，查询功能的响应时间超过了性能指标2秒多，吞吐量开始变小，也就是说吞吐量已经达到峰值，开始掉头向下了。</span><br></pre></td></tr></table></figure>
+
+<h4 id="6-如何判断网络是否存在瓶颈？"><a href="#6-如何判断网络是否存在瓶颈？" class="headerlink" title="6.如何判断网络是否存在瓶颈？*"></a>6.如何判断网络是否存在瓶颈？*</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在性能测试结束之后，我们会根据性能测试的结果，查看在整个性能测试过程中，网络的吞吐量是多少，如果网络的吞吐量占到了服务器的70%以上，我们就认为网络存在瓶颈，通常会增加带宽或者压缩传输数据。</span><br></pre></td></tr></table></figure>
+
+<h4 id="7-如何判断响应时间不达标"><a href="#7-如何判断响应时间不达标" class="headerlink" title="7.如何判断响应时间不达标 *"></a>7.如何判断响应时间不达标 *</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们90%响应时间要求是3s，响应时间不达标的话，我们会根据性能测试结果先检查看下是否是服务器带宽存在问题，如果带宽存在瓶颈，则会考虑增加带宽或者压缩传输数据，如果带宽没有问题的话，我们会从服务器上导出日志，开发一起讨论分析是哪个地方导致响应时间过长，确定问题后，就提单给开发修复，修复好了就进行回归测试。</span><br></pre></td></tr></table></figure>
+
+<h4 id="8-如何判断CPU使用率不达标"><a href="#8-如何判断CPU使用率不达标" class="headerlink" title="8.如何判断CPU使用率不达标 *"></a>8.如何判断CPU使用率不达标 *</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">我们CPU使用率要求不超过80%，CPU使用率不达标，我们会从服务器上导出日志，分析是哪个地方导致CPU使用率不达标，如果分析不出来，就叫上开发一起讨论，确定问题后，就提单给开发修复，修复好了就进行回归测试。</span><br></pre></td></tr></table></figure>
+
+<h4 id="9-日活，月活，下载量-不用背-了解即可"><a href="#9-日活，月活，下载量-不用背-了解即可" class="headerlink" title="9.日活，月活，下载量 (不用背,了解即可)"></a>9.日活，月活，下载量 (不用背,了解即可)</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">日活（DAU，daily active user）：日活跃用户</span><br><span class="line">月活（MAU，month active user）：月活跃用户</span><br><span class="line">下载量：app的下载次数</span><br><span class="line">下载量&gt;=月活&gt;=日活</span><br><span class="line"></span><br><span class="line">UV（Unique visitor）</span><br><span class="line">是指通过互联网访问、浏览这个网页的自然人。访问您网站的一台电脑客户端为一个访客。00:00-24:00内相同的客户端只被计算一次。一天内同个访客多次访问仅计算一个UV。</span><br><span class="line"></span><br><span class="line">PV（Page View）</span><br><span class="line">即页面浏览量或点击量，用户每1次对网站中的每个网页访问均被记录1个PV。用户对同一页面的多次访问，访问量累计，用以衡量网站用户访问的网页数量。</span><br></pre></td></tr></table></figure>
+
+<h4 id="10-服务器怎么优化-x2F-调优"><a href="#10-服务器怎么优化-x2F-调优" class="headerlink" title="10.服务器怎么优化&#x2F;调优*"></a>10.服务器怎么优化&#x2F;调优*</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">分为软件优化和硬件优化</span><br><span class="line">软件优化：架构重构，算法优化，编译优化，代码优化</span><br><span class="line">硬件优化：增加cpu，内存条，磁盘，提升宽带，分布式，负载均衡</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <div class="article-footer">
+      <blockquote class="mt-2x">
+  <ul class="post-copyright list-unstyled">
+    
+    <li class="post-copyright-link hidden-xs">
+      <strong>本文链接：</strong>
+      <a href="http://sunjunyu.cn/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95/" title="测试高频面试题-性能测试" target="_blank" rel="external">http://sunjunyu.cn/2022/09/12/高频面试题-性能测试/</a>
+    </li>
+    
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong> 本博客所有文章除特别声明外，均采用 <a href="http://creativecommons.org/licenses/by/4.0/deed.zh" target="_blank" rel="external">CC BY 4.0 CN协议</a> 许可协议。转载请注明出处！
+    </li>
+  </ul>
+</blockquote>
+
+
+<div class="panel panel-default panel-badger">
+  <div class="panel-body">
+    <figure class="media">
+      <div class="media-left">
+        <a href="sunjunyu.cn" target="_blank" class="img-burn thumb-sm visible-lg">
+          <img src="/images/%E5%A4%B4%E5%83%8F.jpg" class="img-rounded w-full" alt="">
+        </a>
+      </div>
+      <div class="media-body">
+        <h3 class="media-heading"><a href="sunjunyu.cn" target="_blank"><span class="text-dark">蓝桉</span><small class="ml-1x">欢迎交流与分享经验</small></a></h3>
+        <div>个人简介。</div>
+      </div>
+    </figure>
+  </div>
+</div>
+
+
+    </div>
+  </article>
+  
+    
+  <section id="comments">
+  	
+      <div id="uyan_frame"></div>
+    
+  </section>
+
+
+  
+</div>
+
+  <nav class="bar bar-footer clearfix" data-stick-bottom>
+  <div class="bar-inner">
+  
+  <ul class="pager pull-left">
+    
+    <li class="prev">
+      <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E5%8A%9F%E8%83%BD%E6%B5%8B%E8%AF%95/" title="测试高频面试题-功能测试"><i class="icon icon-angle-left" aria-hidden="true"></i><span>&nbsp;&nbsp;上一篇</span></a>
+    </li>
+    
+    
+    <li class="next">
+      <a href="/2022/09/12/%E9%AB%98%E9%A2%91%E9%9D%A2%E8%AF%95%E9%A2%98-%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95/" title="测试高频面试题-接口测试"><span>下一篇&nbsp;&nbsp;</span><i class="icon icon-angle-right" aria-hidden="true"></i></a>
+    </li>
+    
+    
+  </ul>
+  
+  
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-fancy btn-donate pop-onhover bg-gradient-warning" data-toggle="modal" data-target="#donateModal"><span>赏</span></button>
+  <!-- <div class="wave-icon wave-icon-danger btn-donate" data-toggle="modal" data-target="#donateModal">
+    <div class="wave-circle"><span class="icon"><i class="icon icon-bill"></i></span></div>
+  </div> -->
+  
+  
+  <div class="bar-right">
+    
+    <div class="share-component" data-sites="weibo,qq,wechat,facebook,twitter" data-mobile-sites="weibo,qq,qzone"></div>
+    
+  </div>
+  </div>
+</nav>
+  
+<!-- Modal -->
+<div class="modal modal-center modal-small modal-xs-full fade" id="donateModal" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content donate">
+      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+      <div class="modal-body">
+        <div class="donate-box">
+          <div class="donate-head">
+            <p>感谢您的支持，我会继续努力的!</p>
+          </div>
+          <div class="tab-content">
+            <div role="tabpanel" class="tab-pane fade active in" id="alipay">
+              <div class="donate-payimg">
+                <img src="/images/donate/alipay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开支付宝扫一扫，即可进行扫码打赏哦</p>
+            </div>
+            <div role="tabpanel" class="tab-pane fade" id="wechatpay">
+              <div class="donate-payimg">
+                <img src="/images/donate/wechatpay.png" alt="扫码支持" title="扫一扫" />
+              </div>
+              <p class="text-muted mv">扫码打赏，你说多少就多少</p>
+              <p class="text-grey">打开微信扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+          <div class="donate-footer">
+            <ul class="nav nav-tabs nav-justified" role="tablist">
+              <li role="presentation" class="active">
+                <a href="#alipay" id="alipay-tab" role="tab" data-toggle="tab" aria-controls="alipay" aria-expanded="true"><i class="icon icon-alipay"></i> 支付宝</a>
+              </li>
+              <li role="presentation" class="">
+                <a href="#wechatpay" role="tab" id="wechatpay-tab" data-toggle="tab" aria-controls="wechatpay" aria-expanded="false"><i class="icon icon-wepay"></i> 微信支付</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</main>
+
+  <footer class="footer" itemscope itemtype="http://schema.org/WPFooter">
+	
+	
+    <ul class="social-links">
+    	
+        <li><a href="https://github.com/Sun-JunYu" target="_blank" title="Github" data-toggle=tooltip data-placement=top><i class="icon icon-github"></i></a></li>
+        
+        <li><a href="https://weibo.com/u/5814038760" target="_blank" title="Weibo" data-toggle=tooltip data-placement=top><i class="icon icon-weibo"></i></a></li>
+        
+        <li><a href="/atom.xml" target="_blank" title="Rss" data-toggle=tooltip data-placement=top><i class="icon icon-rss"></i></a></li>
+        
+    </ul>
+
+    <div class="copyright">
+    	
+        <div class="publishby">
+        	Theme by <a href="https://github.com/cofess" target="_blank"> cofess </a>base on <a href="https://github.com/cofess/hexo-theme-pure" target="_blank">pure</a>.
+        </div>
+    </div>
+</footer>
+  <script src="//cdn.jsdelivr.net/npm/jquery@1.12.4/dist/jquery.min.js"></script>
+<script>
+window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+</script>
+
+<script src="/js/plugin.min.js"></script>
+
+
+<script src="/js/application.js"></script>
+
+
+    <script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+
+<script src="/js/insight.js"></script>
+
+
+
+
+
+
+   
+
+
+
+
+   
+    
+    <script defer type="text/javascript" src="http://v2.uyan.cc/code/uyan.js?uid=[object Object]"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>
